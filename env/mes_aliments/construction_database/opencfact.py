@@ -12,10 +12,10 @@ class data:
     
     def categorie(self):
 
-        conn = psycopg2.connect(database="dcqhankmnah2r7",
-                                user="nialuqvdnbwagj",
-                                host="ec2-23-23-173-30.compute-1.amazonaws.com",
-                                password="2462155ce31d6d2399f5e161e89355c8a499d2556781657526462dbf67b9ac18")
+        conn = psycopg2.connect(database="ddgh06joqvm83k",
+                                user="giervvxxoatsci",
+                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
+                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
 
 
 ##        conn = psycopg2.connect(database="plateforme",
@@ -47,15 +47,16 @@ class data:
             conn.commit()
             c+=3
 
-
+        print("categorie faites")
     def insert_food(self):
         """Here we run api and we take informations necessary for tables insertion"""
 
 
-        conn = psycopg2.connect(database="dcqhankmnah2r7",
-                                user="nialuqvdnbwagj",
-                                host="ec2-23-23-173-30.compute-1.amazonaws.com",
-                                password="2462155ce31d6d2399f5e161e89355c8a499d2556781657526462dbf67b9ac18")
+
+        conn = psycopg2.connect(database="ddgh06joqvm83k",
+                                user="giervvxxoatsci",
+                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
+                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
 
 
 ##        conn = psycopg2.connect(database="plateforme",
