@@ -12,16 +12,25 @@ Vous pouvez voir vos informations personnel sur Mon compte.
 
 Le site est reponsif, PEP8, les tests sont verts 
 
-Installer un environement virtuel.
-Installer python3.x n'oublier pas de cocher pip !!
-Installer django avec pip
-Lancer django admin-start-project
-Lancer django-admin startapp
-Lancer vos migrations apres avoir fait vos models
-Installer heroku CLI
-Creez vous un compte
-Lancer create heroku app
-Pushez le tout sur heroku depuis heroku cli (apres vous etre connecté) ou depuis github !
+#Installer un environement virtuel.
+
+#Installer python3.x n'oublier pas de cocher pip !!
+
+#Installer django avec pip
+
+#Lancer django admin-start-project
+
+#Lancer django-admin startapp
+
+#Lancer vos migrations apres avoir fait vos models
+
+#Installer heroku CLI
+
+#Creez vous un compte
+
+#Lancer create heroku app
+
+#Pushez le tout sur heroku depuis heroku cli (apres vous etre connecté) ou depuis github !
 
 
 
