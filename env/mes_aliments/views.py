@@ -39,7 +39,7 @@ def searching(request):
     """Here we can searching into database"""
 
     liste_recherche = []
-    stock_depassé = ""
+    exceeded_stock = ""
 
     if request.method == "POST":
         search = request.POST.get('cool')
@@ -48,24 +48,23 @@ def searching(request):
 
         if validate and username:
             current_user = request.user
-            stock = controle_data_aliment(username)
+            stock = controle_data_food(username)
 
             if stock[1] == True:
                 veri = verification_produit_pas_deux_fois(current_user,
-                                                          valider[0])
+                                                          validate[0])
                 if veri == True:
-                    insert_food(username, valider[0])
+                    insert_food(username, validate[0])
                     print("aliment pas deja")
             elif stock[1] == False:
                 print('aliment deja')
                 exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
 
-
         if search:
             current_user = request.user
 
             if current_user.is_authenticated:
-                stock = controle_data_aliment(str(request.user.username))
+                stock = controle_data_food(str(request.user.username))
 
                 if stock[1] == False:
                     exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
