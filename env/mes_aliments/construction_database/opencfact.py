@@ -8,27 +8,19 @@ import psycopg2
 
 
 class data:
-
+    """Here we insert data into tables"""
     
     def categorie(self):
-
+        """Here we insert category"""
+        
         conn = psycopg2.connect(database="ddgh06joqvm83k",
                                 user="giervvxxoatsci",
                                 host="ec2-75-101-133-29.compute-1.amazonaws.com",
                                 password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
 
-
-##        conn = psycopg2.connect(database="plateforme",
-##                                user="postgres",
-##                                host="127.0.0.1",
-##                                password="tiotio")
-
         cursor = conn.cursor()
-        
         self.liste = []
-
         path = "https://fr.openfoodfacts.org/categories"
-        
         requete = requests.get(path)
         page = requete.content
         soup = BeautifulSoup(page, "html.parser")
@@ -39,18 +31,17 @@ class data:
         c = 0
         for i in range(3):
             print(self.liste[c])
-            
             self.liste[c] = self.liste[c].replace(" ", "_")
             self.liste[c]= self.liste[c].replace("'", "")
             
             cursor.execute("INSERT INTO mes_aliments_categorie(name_categorie) VALUES ('{0}')".format(str(self.liste[c])))
             conn.commit()
             c+=3
-
         print("categorie faites")
+
+
     def insert_food(self):
         """Here we run api and we take informations necessary for tables insertion"""
-
 
 
         conn = psycopg2.connect(database="ddgh06joqvm83k",
@@ -58,16 +49,9 @@ class data:
                                 host="ec2-75-101-133-29.compute-1.amazonaws.com",
                                 password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
 
-
-##        conn = psycopg2.connect(database="plateforme",
-##                                user="postgres",
-##                                host="127.0.0.1",
-##                                password="tiotio")
-
         cursor = conn.cursor()
  
 
-        
         c = 0
         d = 1
         self.liste_store = []
@@ -80,9 +64,9 @@ class data:
                               [], [], [], [], [], [], [], [],
                               [], [], [], [], [], [], [], []]
         
-        
+
         self.liste2 = []
-        
+
         for i in range(3):
 
             print(self.liste[c])
@@ -136,8 +120,6 @@ class data:
                     self.brandss = "No_found"
                     self.liste_brands.append("No_found")
 
-
-
                 try:
                     self.store_product = data["products"][0]["stores"]
                     if self.store_product == '':
@@ -152,18 +134,18 @@ class data:
                 print(i)
                 self.image = self.image.replace("'", "")
                 print(self.number_product)
-                
+
                 self.description_product = self.description_product.replace("'", "")
-            
+
                 print(self.description_product)
                 self.nutriscore = self.nutriscore.replace("'", "")
-            
+
                 print(self.nutriscore)
                 self.nutriscore = self.nutriscore.replace("'", "")
-           
+
                 print(self.image)
                 self.image = self.image.replace("'", "")
-            
+
                 print(d)
                
                 print(self.store_product)
@@ -172,9 +154,6 @@ class data:
                 print(self.brandss)
                 self.brandss = self.brandss.replace("'", "")
 
-                
-                
-                
                 cursor.execute("INSERT INTO mes_aliments_aliment (name_aliment,\
                                 image, code_product_food, description, nutriscore,\
                                 id_categorie_id, name_store, name_brand)\
@@ -182,33 +161,18 @@ class data:
                                .format(i, self.image, self.number_product, self.description_product,
                                        self.nutriscore,
                                        d, self.store_product,self.brandss ))
-
-
        
                 conn.commit()
 
-
-                
- 
             d+=1
             c+=3
             self.liste2 = []
 
 
-                                                
 
+if __name__ == "__main__":
 
-
-
-
-
-
-
-
-
-
-
-yo = data()           
-yo.categorie()
-yo.insert_food()
+    yo = data()           
+    yo.categorie()
+    yo.insert_food()
 
