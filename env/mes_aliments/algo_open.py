@@ -1,14 +1,15 @@
 """Here we discuss with database"""
 import psycopg2
+from config import DATABASE, USER, HOST, PASSWORD
 
 def image_aliment(para):
     """Here we search food picture """
  
     para = para.lower()
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                            user="giervvxxoatsci",
-                            host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                            password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c") 
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
     cur = conn.cursor()
 
     cur.execute("""select image, LOWER(name_aliment)
@@ -27,10 +28,10 @@ def titre_aliment(para):
     """Here we search title picture """
 
     para = para.lower()
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                            user="giervvxxoatsci",
-                            host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                            password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cur = conn.cursor()
     cur.execute("""SELECT LOWER(name_aliment)
@@ -47,10 +48,10 @@ def better_nutri(para):
     from food search"""
 
     para = para.lower()
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                            user="giervvxxoatsci",
-                            host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                            password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
     cur = conn.cursor()
 
     cur.execute("""SELECT name_aliment from mes_aliments_aliment
@@ -95,10 +96,10 @@ def food_details(value):
 
     details = []
 
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                            user="giervvxxoatsci",
-                            host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                            password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cur = conn.cursor()
     cur.execute("""SELECT *
@@ -115,10 +116,10 @@ def replace(para):
     """We replace food from my_food"""
     
     para = para.lower()
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                                user="giervvxxoatsci",
-                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cur = conn.cursor()
 
@@ -158,10 +159,10 @@ def data_replace(request, username, aliment, new_aliment):
 
 
     
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                                user="giervvxxoatsci",
-                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")                
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)                
     cur = conn.cursor()
 
     cur.execute("""UPDATE aliment_de_{}
@@ -175,10 +176,10 @@ def data_replace(request, username, aliment, new_aliment):
 def verification_product_not_two(username, produit):
     """here we check that the food is not already present"""
 
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                            user="giervvxxoatsci",
-                            host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                            password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
     cur = conn.cursor()
 
     cur.execute("""SELECT * from aliment_de_{}
@@ -197,10 +198,10 @@ def verification_product_not_two(username, produit):
 def verification_remplacement(username, produit):
     """We verify food isnt already present""" 
 
-    conn = psycopg2.connect(database="ddgh06joqvm83k",
-                                user="giervvxxoatsci",
-                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
                 
     cur = conn.cursor()
 
