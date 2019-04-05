@@ -17,7 +17,7 @@ def food_det(request):
 
     if request.method == "POST":
         search = request.POST.get('produit')
-        details = detail_aliment(search)
+        details = food_details(search)
         url_nutri = details[0][3]
         food = details[0][1]
         code = details[0][2]
@@ -35,57 +35,47 @@ def food_det(request):
 
 
 @csrf_exempt
-def recherche(request):
+def searching(request):
+    """Here we can searching into database"""
 
-    
-                  
     liste_recherche = []
     stock_depassé = ""
+
     if request.method == "POST":
-        
-        recherche = request.POST.get('cool')
+        search = request.POST.get('cool')
         username = request.POST.get('username')
-        valider = request.POST.getlist('data[]')
+        validate = request.POST.getlist('data[]')
 
-
-        if valider and username:
+        if validate and username:
             current_user = request.user
-        
             stock = controle_data_aliment(username)
-
 
             if stock[1] == True:
                 veri = verification_produit_pas_deux_fois(current_user,
                                                           valider[0])
-                print(veri)
                 if veri == True:
                     insert_food(username, valider[0])
                     print("aliment pas deja")
             elif stock[1] == False:
                 print('aliment deja')
-                stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
-                
-      
-        
-        if recherche:
-            
+                exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
+
+
+        if search:
             current_user = request.user
+
             if current_user.is_authenticated:
-           
                 stock = controle_data_aliment(str(request.user.username))
-             
-                 
+
                 if stock[1] == False:
-                    stock_depassé = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
-                
-     
-            image = image_aliment(recherche)
-            titre = titre_aliment(recherche)
+                    exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
+
+            image = image_aliment(search)
+            title = titre_aliment(search)
+
             try:
-                a = better_nutri(recherche)
+                a = better_nutri(search)
                 print(a)
-            
-            
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
                                "b":str(a[1][3]),
@@ -93,14 +83,14 @@ def recherche(request):
                                "d":str(a[3][3]),
                                "e":str(a[4][3]),
                                "f":str(a[5][3]),
-                               
+
                                "aa":str(a[0][0]),
                                "bb":str(a[1][0]),
                                "cc":str(a[2][0]),
                                "dd":str(a[3][0]),
                                "ee":str(a[4][0]),
                                "ff":str(a[5][0]),
-                               
+
                                "aaa":str(a[0][3]),
                                "bbb":str(a[1][3]),
                                "ccc":str(a[2][3]),
@@ -116,19 +106,16 @@ def recherche(request):
                                "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
                                "image":str(image[0][0]),
-                               "titre":str(titre[0][0]),
-                               "stock_depassé":stock_depassé,
-                        
+                               "titre":str(title[0][0]),
+                               "stock_depassé":exceeded_stock,
                                })
-            
+
             except:
-                #lentille verte -> lentillex/a6verte
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
-        
+
     image = '/static/img/header1.jpg'
     return render(request, 'recherche.html', {'image':image})
-
 
 
 
