@@ -1,0 +1,82 @@
+{% include "navbarre.html" %}
+
+
+{% block content %}
+{% endblock %}
+{% load static %}
+  
+    <style>
+        header.masthead {
+            background-image: url({{image}});
+            }
+    </style>
+    <link href="{% static 'css/food_details.css' %}" rel="stylesheet">
+
+
+    
+  <header class="masthead text-center d-flex">
+  
+    <div class="container my-auto">
+          <h1 id="AlimentRecherché" style='background-color: rgba(255, 153, 102);'>
+            <center><strong>{{aliment}}</strong></center>
+          </h1>
+
+    </div>
+          
+  </header>
+
+
+
+
+
+  <section class="bg-primary" id="about">
+  
+    <div class="container">
+    
+      <div class="row">
+      
+        <div class="col-lg-8 mx-auto text-center">
+        
+            <div class="container-fluid">
+                <div class="row" id="row3">
+                    
+                   <div class="col-md-6 col-xs-12" id="block10">
+                       <h1>Nutriscore<br> <img src={{url_nutri}}></h1>
+                   </div>
+
+                   
+                    <div class="col-md-6 col-xs-12" id="block12" >
+                      <h1>Repères nutritionels<br>pour 100 g</h1>  
+                   </div>
+
+                   
+ 
+       
+                  {{code}}
+
+                  <div class="col-md-12 col-xs-12" id="block13">
+                     <a href="https://fr.openfoodfacts.org/produit/{{code}}" target="_blank">
+                       <input type="submit" name="chrche1" value="Voir la fiche d'OpenFactFoods" id="button"/>
+                     </a>
+                     </form>
+                  </div>
+                   
+                
+                   
+                </div>
+           </div>
+                  
+        </div>
+      </div>
+ 
+  </section>
+
+
+
+
+{% include "bottom_page.html" %}
+
+{% block content2 %}
+{% endblock content2%}
+
+
