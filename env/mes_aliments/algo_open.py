@@ -217,31 +217,21 @@ def data_replace(request, username, aliment, new_aliment):
     conn.commit()
 
         
-def verification_produit_pas_deux_fois(username, produit):
-    """ """ 
+def verification_product_not_two(username, produit):
+    """here we check that the food is not already present"""
 
     conn = psycopg2.connect(database="ddgh06joqvm83k",
-                                user="giervvxxoatsci",
-                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
-                
+                            user="giervvxxoatsci",
+                            host="ec2-75-101-133-29.compute-1.amazonaws.com",
+                            password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
     cur = conn.cursor()
 
-
-    
     cur.execute("""SELECT * from aliment_de_{}
                 WHERE name_aliment LIKE LOWER('%{}%')
-              
-
-
                 """.format(username, produit))
-
-    
     conn.commit()
 
-
     rows = cur.fetchall()
-
     liste = [i for i in rows]
     if liste == []:
         return True
@@ -277,6 +267,3 @@ def verification_remplacement(username, produit):
         return True
     else:
         return False
-
-
-    
