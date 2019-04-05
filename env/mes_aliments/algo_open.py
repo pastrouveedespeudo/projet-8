@@ -1,6 +1,6 @@
 """Here we discuss with database"""
 import psycopg2
-from config import DATABASE, USER, HOST, PASSWORD
+from .config import DATABASE, USER, HOST, PASSWORD
 
 def image_aliment(para):
     """Here we search food picture """
