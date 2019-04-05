@@ -3,16 +3,14 @@ from django.urls import path
 from .views import mes_aliments
 from .views import recherche
 from .views import aliment_det
-from .views import recherche2
 from .views import remplacement
 from .views import error
 
 urlpatterns = [
-    path('/mes_aliments', mes_aliments),
-    path('/recherche', recherche),
-    path('/aliment_det', aliment_det),
-    path('/recherche2', recherche2),
-    path('/remplacement', remplacement),
-    path('/error', error),
+    path('/mes_aliments', mes_aliments, name='mes_aliments'),
+    path('/recherche', recherche, name='recherche'),
+    path('/aliment_det', food_det, name='aliment_det'),
+    path('/remplacement', remplacement, name='remplacement'),
+    path('/error', error, name='error'),
 
     ]
