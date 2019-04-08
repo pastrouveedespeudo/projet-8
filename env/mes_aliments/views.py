@@ -160,7 +160,7 @@ def my_food(request):
         return render(request, 'error.html', {"message":message})
 
 
-def replace(request):
+def replacing(request):
     """This is functionality for replace food from my food"""
 
     message = ''
