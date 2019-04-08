@@ -16,13 +16,14 @@ def food_det(request):
     """This is function for food details"""
 
     if request.method == "POST":
+        
         search = request.POST.get('produit')
         details = food_details(search)
-        url_nutri = details[0][3]
-        food = details[0][1]
-        code = details[0][2]
-        image = details[0][5]
-        url_nutri = "/static/img/portfolio/nutriscore/" + str(details[0][4]) + ".jpg >"
+        url_nutri = details.nutriscore
+        food = details.name_aliment
+        code = details.code_product_food
+        image = details.image
+        url_nutri = "/static/img/portfolio/nutriscore/" + str(code) + ".jpg >"
 
         return render(request, 'aliment_det.html',{'detail':details,
                                                    'url_nutri':url_nutri,
