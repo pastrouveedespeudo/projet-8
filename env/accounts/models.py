@@ -6,7 +6,13 @@ from django.dispatch import receiver
 
 class food_account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name_aliment = models.CharField(max_length=100)
+    
+    name_aliment1 = models.CharField(max_length=100, null=False)
+    name_aliment2 = models.CharField(max_length=100, null=False)
+    name_aliment3 = models.CharField(max_length=100, null=False)
+    name_aliment4 = models.CharField(max_length=100, null=False)
+    name_aliment5 = models.CharField(max_length=100, null=False)
+    name_aliment6 = models.CharField(max_length=100, null=False)
 
 
     @receiver(post_save, sender=User)
