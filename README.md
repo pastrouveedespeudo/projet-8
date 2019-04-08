@@ -10,7 +10,7 @@ Choisir c'est aussi important ! Nous vous proposons aussi de pouvori modifier vo
 
 Vous pouvez voir vos informations personnel sur Mon compte.
 
-Le site est reponsif, PEP8, les tests sont verts 
+Le site est reponsif, PEP8 (pylint score de 6 a 8), les tests sont verts 
 
 #Installer un environement virtuel.
 
