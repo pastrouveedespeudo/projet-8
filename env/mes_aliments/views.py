@@ -160,7 +160,7 @@ def my_food(request):
         return render(request, 'error.html', {"message":message})
 
 
-def remplacement(request):
+def replace(request):
     """This is functionality for replace food from my food"""
 
     message = ''
@@ -199,7 +199,7 @@ def remplacement(request):
             current_user = request.user
             image = image_aliment(aliment)
             titre = titre_aliment(aliment)
-            a = replace(str(aliment))
+            a = replace(aliment)
 
             return render(request, 'remplacement.html', {"a":str(a[0][3]),
                                                            "b":str(a[1][3]),
@@ -278,3 +278,17 @@ def error(request):
     """Here we return error templace"""
 
     return render(request, "error.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
