@@ -16,7 +16,7 @@ from accounts.views import my_account
 from mes_aliments.views import my_food
 from mes_aliments.views import searching
 from mes_aliments.views import food_det
-from mes_aliments.views import replace
+from mes_aliments.views import replacing
 from mes_aliments.views import error
 
 from jeux.views import jeux
@@ -41,7 +41,7 @@ urlpatterns = [
     path('mes_aliments/mes_aliments/', my_food, name='mes_aliments' ),
     path('mes_aliments/recherche/', searching, name='recherche'),
     path('mes_aliments/recherche/aliment_det', food_det, name='aliment_det'),
-    path('mes_aliments/remplacement', replace, name='remplacement'),
+    path('mes_aliments/remplacement', replacing, name='remplacement'),
     path('mes_aliments/error', error, name='error'),
 
 
