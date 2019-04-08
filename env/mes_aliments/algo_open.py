@@ -1,6 +1,9 @@
 """Here we discuss with database"""
 import psycopg2
 from .config import DATABASE, USER, HOST, PASSWORD
+from .models import aliment
+from django.db import connection
+
 
 def image_aliment(para):
     """Here we search food picture """
@@ -94,22 +97,10 @@ def food_details(value):
     """Here we calling informations about product. Thank to that we
     can redirect to Openfactfood"""
 
-    details = []
+    details = aliment.objects.get(image='{}'.format(value))
 
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-
-    cur = conn.cursor()
-    cur.execute("""SELECT *
-                    FROM public.mes_aliments_aliment
-                    WHERE image = '{}'""".format(value))
-
-    conn.commit()
-    rows = cur.fetchall()
-    details = [i for i in rows]
     return details
+
 
 
 def replace(para):
@@ -220,3 +211,9 @@ def verification_remplacement(username, produit):
         return True
     else:
         return False
+
+
+
+
+
+
