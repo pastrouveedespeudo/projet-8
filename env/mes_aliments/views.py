@@ -23,7 +23,7 @@ def food_det(request):
         food = details.name_aliment
         code = details.code_product_food
         image = details.image
-        url_nutri = "/static/img/portfolio/nutriscore/" + str(code) + ".jpg >"
+        url_nutri = "/static/img/portfolio/nutriscore/" + str(url_nutri) + ".jpg >"
 
         return render(request, 'aliment_det.html',{'detail':details,
                                                    'url_nutri':url_nutri,
@@ -41,41 +41,53 @@ def searching(request):
 
     liste_recherche = []
     exceeded_stock = ""
-
+    current_user = request.user
+    
     if request.method == "POST":
+
         search = request.POST.get('cool')
         username = request.POST.get('username')
         validate = request.POST.getlist('data[]')
-
+        try:
+            stock = controle_data_food(current_user)
+        except:
+            pass
         if validate and username:
+
             current_user = request.user
             stock = controle_data_food(username)
-
+            
             if stock[1] == True:
                 veri = verification_product_not_two(current_user,
                                                     validate[0])
+       
                 if veri == True:
+                   
                     insert_food(username, validate[0])
                     print("aliment pas deja")
+                    
             elif stock[1] == False:
                 print('aliment deja')
                 exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
 
         if search:
+      
             current_user = request.user
 
             if current_user.is_authenticated:
-                stock = controle_data_food(str(request.user.username))
+
+                stock = controle_data_food(current_user)
 
                 if stock[1] == False:
                     exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
-
+        
             image = image_aliment(search)
             title = titre_aliment(search)
 
             try:
+ 
                 a = better_nutri(search)
-                print(a)
+     
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
                                "b":str(a[1][3]),
@@ -105,8 +117,8 @@ def searching(request):
                                "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
                                "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
-                               "image":str(image[0][0]),
-                               "titre":str(title[0][0]),
+                               "image":str(image),
+                               "titre":str(title),
                                "stock_depassé":exceeded_stock,
                                })
 
@@ -163,12 +175,13 @@ def my_food(request):
 
 def replacing(request):
     """This is functionality for replace food from my food"""
-
+    print("ouiiiiiiiiiiiiiiiiiiii")
+    
     message = ''
 
     if request.method == "POST":
         replace_it = request.POST.getlist('remplace_food')
-
+        print(replace_it,"555555555555555556")
         if replace_it:
             current_user = request.user
             
@@ -190,8 +203,7 @@ def replacing(request):
 
             if b == True:
                 data_replace(request, current_user,
-                             element[0], element[1]
-                             )
+                             element[0], element[1])
             elif b == False:
                 message = 'vous avez deja cet aliment'
 
@@ -230,8 +242,8 @@ def replacing(request):
                                                            "eeee":"/static/img/portfolio/nutriscore/" + str(a[4][2]) + ".jpg >",
                                                            "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
-                                                           "image":str(image[0][0]),
-                                                           "titre":str(titre[0][0]),
+                                                           "image":str(image),
+                                                           "titre":str(titre),
                                                            'message':message
                                                     
                                                            })
