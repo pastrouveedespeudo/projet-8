@@ -1,6 +1,6 @@
 # projet-8
 
-#veuillez noter que le jeu est pour le p10 merci =)
+#A noter que le jeu est pour le p10 
 
 #https://openfactfood.herokuapp.com
 
