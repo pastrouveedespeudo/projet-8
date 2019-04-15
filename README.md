@@ -2,6 +2,8 @@
 
 #A noter que le jeu est pour le p10 
 
+
+
 #https://openfactfood.herokuapp.com
 
 #Bienvenu sur notre site d'aliment, ce site a pour but de choisir des aliments depuis la database d'openfactfood. C'est un super site qui score les aliments en "nutriscore". 
@@ -36,5 +38,7 @@ Le site est reponsif, PEP8 (pylint score de 6 a 8), les tests sont verts
 
 #Pushez le tout sur heroku depuis heroku cli (apres vous etre connecté) ou depuis github !
 
+aliments disponibles: (sans '' ni () ni [] )
 
+[('proactiv margarine tartine sans huile de palme 225g',), ('ravioles a poêler',), ('ferrero collection',), ('plantes et miel mille fleurs',), ('amargo 70% cacao',), ('sablés aux graines de chia',), ('fauchon',), ('mon far breton aux pruneaux',), ('2 fars bretons au lait fermier pruneaux',), ('equador',), ('farine de châtaignes',), ('carré de mie céréales',), ('cake aux ecorces de citron',), ('zingy orange matchmakers',), ('véritable petit beurre',), ('gauffrettes',), ('biscuits ptit dej bio',), ('cookies tout chocolat',), ('chocolat m. libânio ;brésil;',), ('lescargot',), ('werthers original sans sucre',), ('longue conservation nature',), ('riz thaï rouge complet',), ('riz basmati demi-complet',), ('galette de riz chocolat au lait',), ('sugar flakes',), ('pétales de maïs',), ('biscottes épidor 6 cereales',), ('pâte feuilletée pur beurre',), ('pâtes grecques',), ('corn flakes',), ('petits pains grillés',), ('nuss-frucht-mix',), ('tradition',), ('le financiers aux amandes',), ('tresor',), ('pur jus de pomme framboise',), ('raisins',), ('confiture de fraise',), ('précieux noir aromatique 75% cacao',), ('ptit-beurre tablette chocolat au lait',), ('barres céréales aux 5 céréales riz',), ('pains au lait',), ('oeufs à cacher',), ('milk mouse',), ('ravioli aux légumes',), ('céréales froot loops marshmallow',), ('confiture extra fraise 65%',), ('gnocchi à pôeler tradition',), ('mini tablette noir goût corsé',), ('biscino coeur fondant au lait',), ('sylvain spéculoos -generou',), ('roses au chocolat au lait',), ('moulages de paques',), ('farmer crunchy cornflake',)]
 
