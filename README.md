@@ -1,5 +1,7 @@
 # projet-8
 
+#veuillez noter que le jeu est pour le p10 merci =)
+
 #https://openfactfood.herokuapp.com
 
 #Bienvenu sur notre site d'aliment, ce site a pour but de choisir des aliments depuis la database d'openfactfood. C'est un super site qui score les aliments en "nutriscore". 
