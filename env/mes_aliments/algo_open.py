@@ -47,7 +47,8 @@ def better_nutri(para):
     aliment_recherché = [food.name_aliment, food.id_categorie_id,
                         food.nutriscore, food.image, food.id]
   
-    category = aliment.objects.filter(id_categorie_id=food.id_categorie_id)
+    category = aliment.objects.filter(id_categorie_id=food.id_categorie_id).order_by(
+        'nutriscore')
 
     liste = []
 
@@ -87,7 +88,9 @@ def replace(para):
     aliment_recherché = [food.name_aliment, food.id_categorie_id,
                         food.nutriscore, food.image, food.id]
   
-    category = aliment.objects.filter(id_categorie_id=food.id_categorie_id)
+    category = aliment.objects.filter(id_categorie_id=food.id_categorie_id).order_by(
+        'nutriscore')
+
 
     liste = []
 
