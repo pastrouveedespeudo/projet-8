@@ -52,12 +52,14 @@ function pushlist(id_product, user, stock, is_save){
       console.log("trop d\'aliment pour ce compte")
       document.getElementById(is_save).innerHTML = "";
       document.getElementById(is_save).innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/croix.jpg" />'
-  +'  <i>Vous avez trop d\'alement</i>';
+  +'  <i>Vous avez trop d\'aliment</i>';
   }
   else{
       document.getElementById(is_save).innerHTML = "";
       document.getElementById(is_save).innerHTML = '<img style="width:15%;" src="/static/img/portfolio/recherche/validate.jpg" />'
   +'  <i>Enregistrement effectuee</i>';
+
+ 
   };
   };
   
