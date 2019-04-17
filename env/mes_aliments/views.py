@@ -7,10 +7,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.http import JsonResponse
-from .mes_aliments_preferer_user import *
+from .my_food_preferer_user import *
 from django.shortcuts import redirect
 from .algo_open import *
-from .mes_aliments_user import *
+from .my_food_user import *
 
 def food_det(request):
     """This is function for food details"""
