@@ -161,7 +161,7 @@ def verification_product_not_two(username, produit):
         return True
 
 
-def verification_remplacement(username, produit):
+def verification_replacement(username, produit):
     """We verify food isnt already present""" 
 
     c = foodAccount.objects.get(name=username)
