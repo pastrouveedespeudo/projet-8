@@ -39,7 +39,6 @@ def food_det(request):
 def searching(request):
     """Here we can searching into database"""
 
-    liste_recherche = []
     exceeded_stock = ""
     current_user = request.user
     
@@ -83,8 +82,8 @@ def searching(request):
                 if stock[1] == False:
                     exceeded_stock = "oups vous avez trop d'aliment en stock supprime en ! ou remplace le !"
         
-            image = image_aliment(search)
-            title = titre_aliment(search)
+            image = image_food(search)
+            title = title_food(search)
 
             try:
  
@@ -139,7 +138,7 @@ def my_food(request):
     current_user = request.user
 
     try:
-        food = mes_aliment_user(request.user.username)
+        food = my_food_user(request.user.username)
         a = display_food(food)
 
         return render(request, 'mes_aliments.html',{"a":str(a[0][4]),
@@ -183,7 +182,6 @@ def replacing(request):
 
     if request.method == "POST":
         replace_it = request.POST.getlist('remplace_food')
-        print(replace_it,"555555555555555556")
         if replace_it:
             current_user = request.user
             
@@ -201,7 +199,7 @@ def replacing(request):
                 i = "".join(i)
                 element.append(i)
  
-            b = verification_remplacement(current_user, "".join(liste[-1]))
+            b = verification_replacement(current_user, "".join(liste[-1]))
 
             if b == True:
                 data_replace(request, current_user,
@@ -210,11 +208,11 @@ def replacing(request):
                 message = 'vous avez deja cet aliment'
 
         else:
-            aliment = request.POST.get('rem')
+            food = request.POST.get('rem')
             current_user = request.user
-            image = image_aliment(aliment)
-            titre = titre_aliment(aliment)
-            a = replace(aliment)
+            image = image_food(food)
+            title = title_food(food)
+            a = replace(food)
 
             return render(request, 'remplacement.html', {"a":str(a[0][3]),
                                                            "b":str(a[1][3]),
@@ -245,14 +243,14 @@ def replacing(request):
                                                            "ffff":"/static/img/portfolio/nutriscore/" + str(a[5][2]) + ".jpg >",
 
                                                            "image":str(image),
-                                                           "titre":str(titre),
+                                                           "titre":str(title),
                                                            'message':message
                                                     
                                                            })
  
     current_user = request.user
     try:
-        food = mes_aliment_user(request.user.username)
+        food = my_food_user(request.user.username)
         a = display_food(food)
 
         return render(request, 'mes_aliments.html', {"a":str(a[0][4]),
