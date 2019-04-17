@@ -29,7 +29,7 @@ def food_det(request):
                                                    'url_nutri':url_nutri,
                                                    'code':code,
                                                    'image':image,
-                                                   'aliment': food
+                                                   'food': food
                                                    })
     return render(request, 'aliment_det.html')
 
@@ -48,10 +48,12 @@ def searching(request):
         search = request.POST.get('cool')
         username = request.POST.get('username')
         validate = request.POST.getlist('data[]')
+        
         try:
             stock = controle_data_food(current_user)
         except:
             pass
+
         if validate and username:
 
             current_user = request.user
@@ -175,7 +177,7 @@ def my_food(request):
 
 def replacing(request):
     """This is functionality for replace food from my food"""
-    print("ouiiiiiiiiiiiiiiiiiiii")
+
     
     message = ''
 
