@@ -1,4 +1,4 @@
-"""This is view of everything about the accounts"""
+"""This is view of accounts application"""
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
@@ -13,7 +13,7 @@ from django.contrib.auth import (
 from .database_score import *
 from .database_utilisateur import *
 from .forms import UserLoginForm, UserRegisterForm
-
+from .models import *
 
 
 @login_required
@@ -56,6 +56,10 @@ def register_view(request):
         password = form.cleaned_data.get('password')
         user.set_password(password)
         user.save()
+
+        data_food = foodAccount(name = user.username)
+        data_food.save()
+
 
         create_database_user(user.username)
         insert_database_user(user.username)
