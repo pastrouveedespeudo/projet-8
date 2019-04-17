@@ -5,7 +5,7 @@ from .models import aliment
 from accounts.models import foodAccount
 from django.db.models.functions import Lower
 
-def image_aliment(para):
+def image_food(para):
     """Here we search food picture """
     try:
         try:
@@ -22,7 +22,7 @@ def image_aliment(para):
     except:
         pass
     
-def titre_aliment(para):
+def title_food(para):
     """Here we search title picture """
 
     try:
