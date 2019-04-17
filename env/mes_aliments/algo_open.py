@@ -44,7 +44,7 @@ def better_nutri(para):
     from food search"""
 
     food = aliment.objects.get(name_aliment=para)
-    aliment_recherché = [food.name_aliment, food.id_categorie_id,
+    food_search = [food.name_aliment, food.id_categorie_id,
                         food.nutriscore, food.image, food.id]
   
     category = aliment.objects.filter(id_categorie_id=food.id_categorie_id).order_by(
@@ -66,7 +66,7 @@ def better_nutri(para):
 
 
     liste = liste[:6]
-    liste[0] = aliment_recherché
+    liste[0] = food_search
 
     return liste
 
@@ -85,7 +85,7 @@ def replace(para):
     """We replace food from my_food"""
   
     food = aliment.objects.get(name_aliment=para)
-    aliment_recherché = [food.name_aliment, food.id_categorie_id,
+    food_search = [food.name_aliment, food.id_categorie_id,
                         food.nutriscore, food.image, food.id]
   
     category = aliment.objects.filter(id_categorie_id=food.id_categorie_id).order_by(
@@ -108,12 +108,12 @@ def replace(para):
 
 
     liste = liste[:6]
-    liste[0] = aliment_recherché
+    liste[0] = food_search
 
     return liste
 
 
-def data_replace(request, username, aliment, new_aliment):
+def data_replace(request, username, product, new_product):
     """ """   
 
     c = foodAccount.objects.get(name=username)
@@ -123,45 +123,45 @@ def data_replace(request, username, aliment, new_aliment):
             c.name_aliment4, c.name_aliment5, c.name_aliment6]
 
 
-    if c.name_aliment1 == aliment:
-        c.name_aliment1 = new_aliment
+    if c.name_aliment1 == product:
+        c.name_aliment1 = new_product
         c.save()
         
-    elif c.name_aliment2 == aliment:
-        c.name_aliment2 = new_aliment
+    elif c.name_aliment2 == product:
+        c.name_aliment2 = new_product
         c.save()
         
-    elif c.name_aliment3 == aliment:
-        c.name_aliment3 = new_aliment
+    elif c.name_aliment3 == product:
+        c.name_aliment3 = new_product
         c.save()
         
-    elif c.name_aliment4 == aliment:
-        c.name_aliment4 = new_aliment
+    elif c.name_aliment4 == product:
+        c.name_aliment4 = new_product
         c.save()
         
-    elif c.name_aliment5 == aliment:
-        c.name_aliment5 = new_aliment
+    elif c.name_aliment5 == product:
+        c.name_aliment5 = new_product
         c.save()
         
-    elif c.name_aliment6 == aliment:
-        c.name_aliment6 = new_aliment
+    elif c.name_aliment6 == product:
+        c.name_aliment6 = new_product
         c.save()
         
 
 
-def verification_product_not_two(username, produit):
+def verification_product_not_two(username, product):
     """here we check that the food is not already present"""
 
     c = foodAccount.objects.get(name=username)
-    if c.name_aliment1 == produit or c.name_aliment2  == produit or\
-       c.name_aliment3  == produit or c.name_aliment4  == produit or\
-       c.name_aliment5  == produit or c.name_aliment1  == produit:
+    if c.name_aliment1 == product or c.name_aliment2  == product or\
+       c.name_aliment3  == product or c.name_aliment4  == product or\
+       c.name_aliment5  == product or c.name_aliment1  == product:
         return False    
     else:
         return True
 
 
-def verification_replacement(username, produit):
+def verification_replacement(username, product):
     """We verify food isnt already present""" 
 
     c = foodAccount.objects.get(name=username)
@@ -171,7 +171,7 @@ def verification_replacement(username, produit):
 
 
     for i in food:
-        if produit == i:
+        if product == i:
             print("produit deja dans")
             return False
     print("pas produit deja !")
