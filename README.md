@@ -1,5 +1,8 @@
 # projet-8
 
+#dailleurs les muets codeurs ils font comment ?
+
+
 #A noter que le jeu est pour le p10 
 
 
