@@ -1,6 +1,8 @@
 # projet-8
 
-#dailleurs les muets codeurs ils font comment ?
+#bonjour vous pouvez des choses lourde dire oui tout en sachant que... j'ai voulu soulevé les altere de lea l'autre fois... vous pouvez travaillez avec des boissons alcholisé? vous pouvez travaillez dans le froid stp dieu de la matrice me fou pas dans un truk froid? vous avez une voiture ? d'accord je vais vous présenter un petit test, la faire genre ouile ouile ouile vous pouvez entourez les choses dangeureuses ? oublies pas les bidons sur l'étagere en haut a droite !! ensuite jirai macheter une patisserie nik en plusss c'est loin...
+
+
 
 
 #A noter que le jeu est pour le p10 
