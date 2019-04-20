@@ -1,6 +1,7 @@
 # projet-8
 
-normalement faut mettre j'utilise vos produits ou je suis adpete de vos produits heureusement j'ai bien lu pcque c un site de boule ouf
+#sortir toutes les définitions de chaque petit truk et les sortir ca fera cool
+
 
 #A noter que le jeu est pour le p10 
 
