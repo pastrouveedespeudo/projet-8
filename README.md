@@ -1,6 +1,6 @@
 # projet-8
 
-#sortir toutes les définitions de chaque petit truk et les sortir ca fera cool
+#sortir toutes les définitions de chaque petit truk et les sortir ca fera cool va falloir parler vite pour pas dépasser les 15 minutes donc faut que ce soit archi claire dans ta tete fini la présentation et go pikachu
 
 
 #A noter que le jeu est pour le p10 
