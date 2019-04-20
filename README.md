@@ -1,7 +1,6 @@
 # projet-8
 
-jme rend compte que le code est nul mtn y'a pleins de truk qui servent a rien et pleins de truk qui sont des fautes... merde pcque ptetre la y ma dit presentation nul mais mtn presentation bonne et code nul... pcque grace a la presentation nul le code se voyait pas trop...
-
+nan c pas nul ca marche alors c ok !
 
 #A noter que le jeu est pour le p10 
 
