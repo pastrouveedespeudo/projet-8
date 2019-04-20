@@ -1,3 +1,7 @@
+INTTRO, des code, CONCLU (rappel) FAIS DES PHRASES CORRECTE ET FR
+prend le temps de réflchir faut pas dire truk ni faire des phrases de bb meme si tu dis euh 100 ans c mieux que ah oui ou truk le type est chaud pcque son dernier paragraphe est ouaaaaa
+
+
 Faire l'intro
 
 tout d'abord les pages html qui sont l'interface de la recherche à travers 2 pages navebarre et home.html. Elles contiennent toutes les deux une balise form qui est une partie qui contient des  éléments interactifs du document que l'on va envoyé vers un url a travers une methode post. On envoie donc des informations a notre serveur. Ces éléments sont un champs de saisie cad un input de type texte, ici céréactive par exemple. Et on va déclencher cet envoie d’information a notre serveur c'est a dire un ordianteur relié a internet qui a pour rôle donnée des donné qui lui sont demandé par l'input submit. 
@@ -42,6 +46,59 @@ La connexion voici la simulation d'une connexion d'un utilisateur. On peut voir 
 
 Voici maintenant le plus gros. La deuxieme recherche d'un aliment et l'utilisateur est inscrit et connecté. Tout dabord,  la recherche + les 5 autres aliments.
 
-Nous devons parler des pages html. Afin de pouvoir sauvegarder un aliment l'utilisateur doit appuyer sur sauvegarder.
+Nous devons parler des pages html. Afin de pouvoir sauvegarder un aliment l'utilisateur doit appuyer sur la carré a coter de sauvegarder. Ce carré est une checkbox qui quand on clique dessus active une fonction. Sur la page html il y a 6 checkboxs.
+
+En cliquant sur la checkbox on active la liste pushlist() qui prend en parametre id_product, user, stock et is_save. id_product est l'id de la balise input sur laquelle on appuie (la checkbox). User est l'utilisateur en cours, stock est une balise qui contient un gabarit, le gabarit du message stock dépassé, initialement elle est vide donc ne saffiche pas. Enfin is_save est une div vide qui affichera le message suivant (simulation).
+Ici on stock dans une variable a la valeur de l'id_product qui contient par un gabararit le nom de l'aliment, attention celle la est importante
+le nom de id_product soit is_save.
+Et on stock egalement dans une variable c l'user. On ajoute cela a des 3 différentes listes.
+Enfin on récupéere la balise contenant le gabartis qui nous dis si le stoc kdaliment est dépassé ou non.
+Ensuite dans deux block d'instruction if else, on execute ;
+si  le message du stock est différent d'une valeur nul alors on efface is_ave et on lui attribut une balise image (croix rouge). Sinon on exccute le deuxieme block et on met une image de crox verte.
+(bah alors on met plus de définition ? J'en peux pluuus) 
+
+Ensuite, en cliquant sur la checkbox on active aussi une requete de type post en ajax. Cette requete va envoyer les parametres suivants : l'username et le dernier element de la liste contenant les nom_d'aliment. 
+
+Si on récupere une requete d'objet de type post alors on essaie de prendre les valeurs suivantes, a noter que nous l'avons deja vu. Search variable, la requete post de la recherche (pour afficher le titre et l'image), la vairble username va récupere l'user en cours et validate va récuperer la liste contenant le nom du dernier aliments de la liste des produits.
+
+Si validate et username ne sont pas nul alors :
+on récupere l'utilisateur en cours, et on appel la fonction controle_data_user() si cette fonction renvoie True alors on appel verification_product_not_two(). Si cette derniere fonction renvoie True alors on peut stocker l'aliment avec insert_food()
+Si  verification_product_not_two() renvoie false alors on affiche un message qui dis que l'utilisateur a trop daliment.
+
+Controle data_food est une fonction qui prend en paramètre username. En effet on va se servir de se parametre afin de demander au manager de recueillir du modele foodAccount l'objet dont le parametre name par le parametre de la fonction et en créer une instance. Deca on va stocker dans une liste tous les autres attribut (qui sont les aliments de l'utilisateur). On définie a 0 une variable integer. On parcours la liste d'attribut d'aliments et s'il est différent d'une valeur vide alors on increment la variable number de + 1. SI la variable number a la fin est >= 6 aolrs on retourne false + un message sinon on retourn True + un message.
+Grace a cette fonction on interdit l'ajout d'aliment dans la table foodAccount.
+
+Verification product not two permet d'empecher l'utilisateur de mettre plusieurs fois le meme produit dans ses aliments.
+
+Ici on définie deux parametres. Username et product. Username nous sert a demander au model foodAccountpar le manager l'objet correspondant au parametre name.
+Ensuite on va faire un block d'instruction if ou l'on passe en revu tous les aliments de l'utilisateur. Si un deux est égale avec notre parametre product (soit l'aliment selectionné de l'utilisateur) on return false et on interdit donc la mise en table sinon on return True.
+
+Enfin la derniere fonction est insert_food contenant deux parametres. L'username pour appeler l'objet du modele correspondant au parametre name et food_name. On va vérifier par instruction if chaque éléments. Si un des aliments est egale a une valeur vide alors on renome l'objet par le parametre food_name (la recherche de l'utilisateur) et on le sauvegarde sinon on passe a la suite et ainsi desuite.
+
+Simu web
+
+la fonction my_food(). On récupere l'utilisateur en cours. Et on fait deux bloc d'instruction try except. L'instruction except permet de demander a l'utilisateur a travers une page html de remplir ses aliments. 
+Le block try permet de récupérer les aliments de l'utilisateur, et de récuperer les informations des aliments. Ensuite on return sur le template les informations nécéssaires.
+
+Comment marche my_food_user ? On définie une fonction avec un parametre qui va nous servir a récuperer l'objet correspondant au modele. On fait une instance et on récupere les attibuts de l'objet.  Ensuite pour chaque attribut dans la liste on les insertdans une liste que l'on retourne
+
+Maintenant displya_food() prend en parametre food_list.
+On définie une liste vide. On définit deux block d'instruction sous try except. Pour le premier block on parcours la liste que l'on récupere (soit la liste des aliments de l'utilisateur) et on appel par le manager le modele aliment ou l'on récupere l'objet contenu dans la varible éphémere i. on récupere dans une liste les attrivuts suivant nom aliment, code, description, nutriscore image, marque et magasin. Cette liste est ensuite ajouter a la liste liste_ali. On oublie pas de redéfinir note liste a =[]
+on retourne la liste.  
 
 
+Description d'un produit. Afin de pouvoir effacer l'image puir de pouvoir mettre les 3 inputs on utilise la fonction choice. L'image est enfete un input image qui a l'appuie déclenche la fonction choice() la fonction choice prend en parametre im, qui est l'id de l'emplacement de l'image,
+image qui est une balise vide
+detail qui est aussi un balise vide,
+remplacement qui est aussi une balise vide
+nan qui est une balise vide 
+gabarit qui est l'image de l'aliment
+
+on va display l'image
+on va remettre l'image a l'emplacement de l'image mais en plus petit, on va récuperer la balise detail vide pour lui mettre un input de type submit et faire cela 3 fois. 
+On va mettre dans la balise nan une nouvelle valeur qui a lappuie activera une fonction nanrien()
+pour la balise remplacement on va mettre un input de valeur remplacement et pour detail un input submit de valeur detail.
+
+La fonction nanrien() prend en parametre im image detail remplacement et nan. Elle va remettre image, detail remplacement et nan a une valeur null et remettre im en display  ce qui va reafficher l'image.
+
+La fonction fodd_det()
