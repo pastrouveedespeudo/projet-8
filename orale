@@ -24,7 +24,7 @@ Par l'orm django nous récupérons par le manger un objet qui par la method get 
 
 Dans une liste nous stockons le nom de l'aliment, sa catégorie son nutriscore son image et son id. Ensuite nous demandons au manager de filtrer par le methode filter les objets  du modele aliment par leur id de categorie et cela par ordre croissant de nutriscore. A noter que filter renvoie une liste.
 Nous initialisons une liste vide et une variable de type int a 0 (count). Nous parcourons la variable contenant les objets du modele retourner par le manager s'appelant category. A chaque tour de boucle nous incrémentons de + 1 la variable count et des qu'elle est egale a 20 on casse la boucle. Mais tant qu'elle n'est pas égale a 20 on récupere les objects : nom,  categorie nutriscore ainsi que image du modele aliment sous forme de liste que nous ajoutons a la liste vide liste.
-Ensuite, nous redifissons cette liste qui etait de 0 element a 20 elments (notons que c mtn une liste de liste) de 20 au 6 premiers elements grace a l'expression slide. Ensuite nous remplacons le premier element de la liste comme etant notre recherche daliment. A noter qu'au lieu de rempalcer  le 6 eme element de la liste par notre recherche (en position 0 la mtn dans la liste) car nous effacons potentiellement une valeur nutriscore de A au lieu de D (comme dans l'exemple de simulation oups)
+Ensuite, nous redifissons cette liste qui etait de 0 element a 20 elments (notons que c mtn une liste de liste) de 20 au 6 premiers elements grace a l'expression slice. Ensuite nous remplacons le premier element de la liste comme etant notre recherche daliment. A noter qu'au lieu de rempalcer  le 6 eme element de la liste par notre recherche (en position 0 la mtn dans la liste) car nous effacons potentiellement une valeur nutriscore de A au lieu de D (comme dans l'exemple de simulation oups)
 
 Passons a l'inscription de l''utilisateur. Voici la page html qui sert d'interface a l'inscription. Parlons un peu des formulaires de la fonction userregisterform. Tout dabord nous faisons hérité notre class par la classe mère forms du module django.foms. Ensuite nous définissons des champs ici un charfield pour du text et un champ emiafield pour un champs d'email. Ensuite nous appelons la classe méta  ce sont les informations de notre classe, de notre formulaire. Ensuite nous définissons une fonction de nettoyage clean. Self.cleaned_data.get. En effet cela permet de lutter contre le piratage malveillant en convertissant le tout en chaine de caractere. Mais aussi de pouvoir renvoyer none a contrario de get[''] qui leve une exception. Ensuite nous levons des exceptions En cas de non email pareil par exmeple.
 
@@ -34,4 +34,14 @@ Si le formulaire est valide alors on redéfini le mdp de l'utilisateur car djang
 
 Pour logout on se sert de la deconnexion de django.
 
-La connexion
+La connexion voici la simulation d'une connexion d'un utilisateur. On peut voir qu'il rentre son username et son mdp. Il faut qu'il valide afin de pouvoir se connecter. Nous avonc donc une classe userloginform. Cette classe est pratiquement la meme que register_views(). En effet, on fait hérité  userloginform par la classe mere form, on défini 2 champs de charfield pour du texte. On ajoute un widget au mot de passe pour mettre des étoiles, afin de dissimuler la saisie de rentrée (voilà c ca qu'ils aiment pas trop). On néttoies les champs et s'ils ne sont pas vide alors on se sert du système d'authentification de django et on retourne tout cela. On recupere cela dans la variable form. S'il est valide alors on refais un nettoyyage, on authentifie l'user et on redirige l'utilisateur a la page d'accueil.
+
+
+
+
+
+Voici maintenant le plus gros. La deuxieme recherche d'un aliment et l'utilisateur est inscrit et connecté. Tout dabord,  la recherche + les 5 autres aliments.
+
+Nous devons parler des pages html. Afin de pouvoir sauvegarder un aliment l'utilisateur doit appuyer sur sauvegarder.
+
+
