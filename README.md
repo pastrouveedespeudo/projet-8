@@ -1,6 +1,6 @@
 # projet-8
 
-#sortir toutes les définitions de chaque petit truk et les sortir ca fera cool va falloir parler vite pour pas dépasser les 15 minutes donc faut que ce soit archi claire dans ta tete fini la présentation et go pikachu
+jme rend compte que le code est nul mtn y'a pleins de truk qui servent a rien et pleins de truk qui sont des fautes... merde pcque ptetre la y ma dit presentation nul mais mtn presentation bonne et code nul...
 
 
 #A noter que le jeu est pour le p10 
