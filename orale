@@ -1,0 +1,16 @@
+Faire l'intro
+
+tout d'abord les pages html qui sont l'interface de la recherche à travers 2 pages navebarre et home.html. Elles contiennent toutes les deux une balise form qui est une partie qui contient des  éléments interactifs du document que l'on va envoyé vers un url a travers une methode post. On envoie donc des informations a notre serveur. Ces éléments sont un champs de saisie cad un input de type texte, ici céréactive par exemple. Et on va déclencher cet envoie d’information a notre serveur c'est a dire un ordianteur relié a internet qui a pour rôle donnée des donné qui lui sont demandé par l'input submit. 
+
+Ensuite on a la fonction searching qui va traiter la recherche.
+Par la fonction searching on utilise l'api de django. Si il y a un objet de  requete de type post non vide (définie par le if) alors on va récuperer dans des variables les informations suivante : cool, username et data[] sous forme de liste.
+Ici on va uniquement se concentrer sur search.
+Si la variable search n'est pas null alors on va recupérer l'utilisateur en connexion. S'il y a un utilisateur en connexion on va appeler la fonction contrôle data food() qui va renvoyé True ou false. Si elle renvoie False alors on redéfinie une variable initialement vide.
+Ensuite on va appeler deux autres fonctions : title et image_food. Maintenant nous allons faire un bloc try et bloc execept. On fait appel au bloc de l'instruction try cad la methode better_nutri() et de renvoyer les informations contenu dans les variable image, tilte te a sur notre page html. L'erreur a laquelle on s'attend c'est qu'il n'y est pas d'aliment correspondant a notre recherche dans la database. Alors on renvoie un message d'erreur par l'instruction du bloc except.
+
+Les fonctions associées ! Commencons par contrôle_data_food() Ici on va faire appel a l'orm de django qui est un enregistrement d'objet sta dire un modele. On va stocker dans une variable la recherche d'un objet qui prend en parametre le parametre de fonction username.
+Ensuite dans une petit liste ma gueule on va récuperer les objet qui contient les aliments de l'utilisateur. Pour chqaue objet on va vvérigier qu'il ne sont pas nul. S'il ne le sont pas alors on incrément une varible initialement égale a 0. Si notre variable incrémenter est > 6 on renvoie ce message et False sinon on renvoie ce message et True.
+
+Image_food() encore une fois on se sert de l'orm de django qui est un enregistrement d'objet on parle alors de model. Ici on va récuperer un objets de l'enregistrement d'objets qui contient pour parametre le parametre de notre fonction cad para. On récuperer alors l'objet image de l'enregistrement d'objet de django cad model par la method contains qu iest un equivalent a une requete sql du genre select * from aliment where name_aliment LIKE %recherche% cad ce modele a pour but d'utiliser tous les enregistrement qui utilise ce qu'il y a entre les %%. Sinon on fractionne la chaine de caractere et on récupere l'objet image
+
+dire la meme chose pour title
