@@ -101,4 +101,22 @@ pour la balise remplacement on va mettre un input de valeur remplacement et pour
 
 La fonction nanrien() prend en parametre im image detail remplacement et nan. Elle va remettre image, detail remplacement et nan a une valeur null et remettre im en display  ce qui va reafficher l'image.
 
-La fonction fodd_det()
+ en cliquant sur l'input de type submit qui va envoyer les information au serveur par un form qui est un section d'un document qui contient des éléméents interactifs vers l'url de la fonction La fonction fodd_det() par la méthode post. Par une valuer booléene s'il existe une requete post alors on va récupérer le nom de la balise produit. On va appeler la fonction food_details qui prend en parmaetre la recherche. Puis par la fonction food_details on va faire appel a l'orm en stockant dans la variable url_nutri l'attribut nutriscore.,
+on récupere le nom de l'aliment, le code, l'image et l'url de l'image nutriscore par le meme procédé. Ensuite on retourne tous ca au template.
+
+Food détails permet de récupérer via le model aliment cad un enregistrement d'objet l'objet qui prend en pramaetre le parametre value de la fonction. Ici on demand cela par le parametre image. On fait appel a une instance que l'on stock dans une variable que l'on retourne.
+
+Voici la fonction replacing(). En appuyant sur l'input remplacer cet aliment on déclenche un post vers la fonction replacing qui va le récupérer et récupéerer le nom de la balise de l'input. On la stock dans une vairable. SI la variable est non nul alors on récuperer l('utilisateur en cours.
+
+On créer une liste de liste a double élements, liste, puis une autre liste element vide puis une variable int initialement a 0. que contient replace_it ? Replace it contient :
+l'utilisateur vient d'appuyer sur un de ces aliments, il vient dappuyer sur remplacer et il clique sur remplacer. replace_it contient l'aliment d'origine et le substitut . Nous traitons alors la donnée en ajoutons a notre liste chaque lettre de l'aliment. Si on detecte une virgule alors on ajoute + 1 a c ce en effet on dit : pour la liste de l'elmeent 0 on ajoute les lettre s'il y a une virgule on ajoute 1 a c qui fait pour la liste de l'element1 on ajoute les lettre. Puis on join les elements de les élements de liste qui unifie la chaine de charactere. Puis on appel la fonction verification replacement.
+Cette fonction va renvoyer une vlaeur booléen true pi false si true alors on appel la fonction data_replace sinon on retourn un message comme quoi l'utilisateur a deja le produit.
+
+Si on recoit une requete post mais que replace_it est null alors on récupere l'input rem ou l'on affiche les aliment. Et si on ne récuperer pas de requete post alors onretourn l'utilisateur vers ces aliments. Par exemple l'utilisateur a deja l'aliment.,
+
+Verification replacement ici on appel l'orm djanfo on fait une instance que l'on stock dans une variable avec le parametre username du parametre de la gfonction. On récupere cela et on stoc kles attribu aliment1 a 6 dans une liste. On parcours la liste et si un des attribut match avec le parametre product de la fonction alors on retourn false ca veut dire qu'il ad eja son aliment sinon true et on peut rempalcer et on retourn l'utilisateur vers ses aliment. Et on fait donc appel a data_replace. Ou meme procedé orl,  et on parcours chaque aliment par replace_it on a l'ancien et le nouveau produit. Si un des aliment match avec l'aliment d'origine on le remplace par le substitut et on le save.
+
+ON EXPLIQUE EN GROS, ON EXPLIQUE LE CODE, ON EXPLIQUE LE RESULTAT, ON NE PERDS PAS LE MEC SINON C PAS DE LA COGNITION SOCIALE, ET APRES LE MEC TE DETESTE
+
+
+La base de donnée. 
