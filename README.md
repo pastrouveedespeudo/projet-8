@@ -1,6 +1,7 @@
 # projet-8
 
-nan c pas nul ca marche alors c ok !
+y faut 13 pages mais les  autres c juste des pages de présentation ptetre qu'il faudrait que je les enleve... 13 -> 50 mais jtrouve ca trop classe de mettre les titres en rouges...
+
 
 #A noter que le jeu est pour le p10 
 
