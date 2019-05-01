@@ -1,6 +1,8 @@
 # projet-8
 
-gg ton manage.py est mal placé jsp que c'est ca ! jme suis pas vénére j'ai pris le temps de grignoter dailleur j'ai la dale mtn
+#stp rempli mes tables sans accroc
+
+
 
 #https://openfactfood.herokuapp.com
 
