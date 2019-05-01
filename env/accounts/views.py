@@ -10,8 +10,6 @@ from django.contrib.auth import (
     logout
     )
 
-from .database_score import *
-from .database_utilisateur import *
 from .forms import UserLoginForm, UserRegisterForm
 from .models import *
 
