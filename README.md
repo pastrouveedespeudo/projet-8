@@ -1,6 +1,6 @@
 # projet-8
 
-finir de revoir * re sentrainer quoi
+gg ton manage.py est mal placé jsp que c'est ca !
 
 #https://openfactfood.herokuapp.com
 
