@@ -21,7 +21,7 @@ from mes_aliments.views import error
 
 from jeux.views import jeux
 
-from plateforme import views
+#from plateforme import views
 
 
 handler404 = "plateforme.views.handler404"
@@ -45,7 +45,7 @@ urlpatterns = [
     path('mes_aliments/error', error, name='error'),
 
 
-    path('jeux/jeux/', jeux, name='jeux'),
+    #path('jeux/jeux/', jeux, name='jeux'),
 
 
     
