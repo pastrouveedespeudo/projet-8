@@ -1,5 +1,7 @@
 """Here we creating tables for our database"""
 import psycopg2
+from config import *
+
 
 class create_tables:
     """creating tables"""
