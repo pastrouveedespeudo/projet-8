@@ -13,10 +13,10 @@ class data:
     def categorie(self):
         """Here we insert category"""
         
-        conn = psycopg2.connect(database="ddgh06joqvm83k",
-                                user="giervvxxoatsci",
-                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+        conn = psycopg2.connect(database="plateforme",
+                                user="jb",
+                                host="127.0.0.1",
+                                password="tiotiotio333")
 
         cursor = conn.cursor()
         self.liste = []
@@ -44,10 +44,10 @@ class data:
         """Here we run api and we take informations necessary for tables insertion"""
 
 
-        conn = psycopg2.connect(database="ddgh06joqvm83k",
-                                user="giervvxxoatsci",
-                                host="ec2-75-101-133-29.compute-1.amazonaws.com",
-                                password="2d01f5ec86055f0422b819622bbb1e55a4dbd92d88d73ee9954c128b7aa8790c")
+        conn = psycopg2.connect(database="plateforme",
+                                user="jb",
+                                host="127.0.0.1",
+                                password="tiotiotio333")
 
         cursor = conn.cursor()
  
