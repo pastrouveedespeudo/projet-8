@@ -1,7 +1,7 @@
 language: python
 
 python:
- - "3.7"
+ - "3.5"
  
 # command to install dependencies
 before_script:
@@ -10,7 +10,7 @@ before_script:
 
 branches: 
     only:
-- staging 
+      - staging 
 
 
 env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis'
