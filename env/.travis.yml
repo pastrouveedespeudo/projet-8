@@ -1,3 +1,4 @@
+dist: xenial
 language: python
 
 python:
@@ -15,7 +16,7 @@ branches:
 - staging 
 
 
-env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis.py'
+env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis'
 
 service:
   - postgresql 
