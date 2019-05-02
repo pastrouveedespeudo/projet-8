@@ -41,11 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'mes_aliments',
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> 2b5b36edbbdddb8374513d3dada653600c8d80bf
 
 ]
 
