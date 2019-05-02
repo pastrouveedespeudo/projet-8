@@ -11,8 +11,7 @@ branches:
     - staging1
 
 before_script:
-  - pip freeze > requirements.txt
-  - pip install -r requirements.txt
+  - pip install --allow-all-external -r requirements.txt 
 
 services:
   - postgresql
