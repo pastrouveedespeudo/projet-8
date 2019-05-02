@@ -3,6 +3,7 @@ python:
   - "3.5"
   - "3.7-dev"
   - "3.7"
+  - "nightly"
 # command to install dependencies
 before_script:
   - pip install -r requirements.txt
