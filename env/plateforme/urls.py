@@ -21,7 +21,7 @@ from mes_aliments.views import error
 
 
 
-#from plateforme import views
+from plateforme import views
 
 
 handler404 = "plateforme.views.handler404"
