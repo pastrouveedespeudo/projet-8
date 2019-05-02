@@ -17,4 +17,6 @@ services:
 env: DJANGO_SETTINGS_MODULE="plateforme.settings.travis"
 
 script:
-  - python env/manage.py test
+  - python env/manage.py test plateforme.tests
+  - python env/mange.py test accounts.tests
+  - python env/manage.py test mes_aliements.tests
