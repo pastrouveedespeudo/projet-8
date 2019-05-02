@@ -1,11 +1,8 @@
-dist: xenial
 language: python
 
 python:
-  - "3.5"
-  - "3.7-dev"
-  - "3.7"
-  - "nightly"
+ - "3.7"
+ 
 # command to install dependencies
 before_script:
   - pip install -r requirements.txt
@@ -18,10 +15,10 @@ branches:
 
 env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis'
 
-service:
+services:
   - postgresql 
 
 script:
-  - python manage.py test
-  - pytest # or py.test for Python versions 3.5 and below
+   - python manage.py test
+ 
 
