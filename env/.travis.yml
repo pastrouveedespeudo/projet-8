@@ -1,0 +1,22 @@
+language: python
+python:
+  - "3.5"
+# command to install dependencies
+before_script:
+  - pip install -r requirements.txt
+# command to run tests
+
+branches: 
+    only:
+	 - staging 
+
+
+env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis'
+
+service:
+  - postgresql 
+
+script:
+  - python manage.py test
+  - pytest # or py.test for Python versions 3.5 and below
+
