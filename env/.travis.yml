@@ -15,7 +15,7 @@ branches:
 - staging 
 
 
-env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis'
+env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis.py'
 
 service:
   - postgresql 
