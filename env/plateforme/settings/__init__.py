@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'mes_aliments',
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 2b5b36edbbdddb8374513d3dada653600c8d80bf
 
 ]
 
@@ -89,6 +93,7 @@ DATABASES = {
         'PORT' : '5432',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
