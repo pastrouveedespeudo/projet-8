@@ -10,11 +10,7 @@ from django.contrib.auth import (
     logout
     )
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> b9d9ac124ccfd094d2e488f5f738f51dae71399b
 from .forms import UserLoginForm, UserRegisterForm
 from .models import *
 
