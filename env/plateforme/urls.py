@@ -45,7 +45,7 @@ urlpatterns = [
     path('mes_aliments/error', error, name='error'),
 
 
-    #path('jeux/jeux/', jeux, name='jeux'),
+  
 
 
     
