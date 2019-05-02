@@ -19,7 +19,7 @@ from mes_aliments.views import food_det
 from mes_aliments.views import replacing
 from mes_aliments.views import error
 
-from jeux.views import jeux
+
 
 #from plateforme import views
 
