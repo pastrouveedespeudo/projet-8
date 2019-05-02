@@ -4,12 +4,13 @@ python:
       - "3.7"
 # command to install dependencies
 before_script:
+      - pip freeze > requirements.txt
       - pip install -r requirements.txt
 # command to run tests
 
 branches: 
     only:
-	 - staging 
+	 - staging1 
 
 
 env: DJANGO_SETTINGS_MODULE = 'plateforme.settings.travis'
