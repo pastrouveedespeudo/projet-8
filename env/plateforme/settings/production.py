@@ -1,4 +1,8 @@
 from . import *
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+import raven
+
 
 SECRET_KEY = '_7cd!+a@ci9f93a%lb3#-a(brz2zblelg=1qjlc!b_*g_@(mxk'
 
@@ -16,8 +20,7 @@ DATABASES = {
     }
 }
 
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
+
 
 sentry_sdk.init(
     dsn="https://3be951771b6744659d92bf290ff432ee@sentry.io/1451910",
@@ -27,9 +30,6 @@ sentry_sdk.init(
 
 
 
-
-
-import raven
 
 INSTALLED_APPS += [
     'raven.contrib.django.raven_compat',
