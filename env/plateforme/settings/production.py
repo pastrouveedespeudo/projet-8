@@ -5,6 +5,9 @@ import raven
 
 
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 SECRET_KEY = '_7cd!+a@ci9f93a%lb3#-a(brz2zblelg=1qjlc!b_*g_@(mxk'
 
 DEBUG = False
@@ -31,6 +34,7 @@ sentry_sdk.init(
 
 
 
+<<<<<<< HEAD
 INSTALLED_APPS += [
     'raven.contrib.django.raven_compat',
 ]
@@ -87,3 +91,5 @@ LOGGING = {
     },
 }
 
+=======
+>>>>>>> 95a6b6b466633f319a2c473227e7d168b066d95a
