@@ -1,8 +1,10 @@
 # projet-8
 
+#probleme avec la base de donnée
+
+#mtn faut faire du php je crois chai pas 
 
 
-#ben ca marche mais j'ai pas compris comment du coup chui pas apaisé... si enfete ca va mieux
 
 #https://openfactfood.herokuapp.com
 
