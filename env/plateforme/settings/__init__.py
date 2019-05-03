@@ -65,7 +65,7 @@ TEMPLATE_DIRS = (
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
+        'DIRS': [[os.path.join(BASE_DIR, "templates")], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,6 +77,17 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
+TEMPLATE_LOADERS = (
+	'django.template.loaders.filesystem.Loader',
+	'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_DIRS = (
+	os.path.join(BASE_DIR, 'templates'),
+)
 
 WSGI_APPLICATION = 'plateforme.wsgi.application'
 
