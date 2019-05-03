@@ -2,7 +2,7 @@
 
 
 
-#ben merde j'avais pas compris jmodifier un truk alors qu'il fallait modifier l'autre truk oh ca me rendais fou oh purée mtn c requirements
+#ben ca marche mais j'ai pas compris comment du coup chui pas apaisé... si enfete ca va mieux
 
 #https://openfactfood.herokuapp.com
 
