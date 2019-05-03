@@ -12,7 +12,7 @@ from django.shortcuts import redirect
 from .algo_open import *
 from .my_food_user import *
 
-
+import logging
 
 logger = logging.getLogger(__name__)
 
