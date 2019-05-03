@@ -42,7 +42,7 @@ urlpatterns = [
     path('mes_aliments/recherche/', searching, name='recherche'),
     path('mes_aliments/recherche/aliment_det', food_det, name='aliment_det'),
     path('mes_aliments/remplacement', replacing, name='remplacement'),
-    path('/mes_aliments/error', error, name='error'),
+    path('mes_aliments/error', error, name='error'),
 
 
   
