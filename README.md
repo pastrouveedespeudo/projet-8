@@ -1,8 +1,8 @@
 # projet-8
 
-#157.230.34.183
 
-#jcrois c pire que l'ajax la je pige que dal
+
+#ben merde j'avais pas compris jmodifier un truk alors qu'il fallait modifier l'autre truk oh ca me rendais fou oh purée mtn c requirements
 
 #https://openfactfood.herokuapp.com
 
