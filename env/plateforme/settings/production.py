@@ -20,7 +20,10 @@ DATABASES = {
     }
 }
 
-import raven
+sentry_sdk.init(
+    dsn="https://36a8e7d38bef428ebe69a8e6fa584789@sentry.io/1452140",
+    integrations=[DjangoIntegration()]
+)
 
 INSTALLED_APPS += [
     'raven.contrib.django.raven_compat',
