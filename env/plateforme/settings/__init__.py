@@ -59,13 +59,10 @@ ROOT_URLCONF = 'plateforme.urls'
 
 
 SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
-TEMPLATE_DIRS = (
-    os.path.join(SETTINGS_PATH, 'templates'),
-)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': ['/home/jb/projet-8/env/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
