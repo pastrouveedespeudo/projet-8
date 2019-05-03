@@ -94,7 +94,7 @@ def searching(request):
  
                 a = better_nutri(search)     
     		logger.info('New search', exc_info=True, extra={
-        	    'request': request,
+        		'request': request,
    	        })
 
 
