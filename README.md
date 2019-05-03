@@ -2,7 +2,7 @@
 
 #probleme avec la base de donnée
 
-#mtn faut faire du php je crois chai pas 
+#mtn faut que je fasse une commande cron et newrelic ben c'est ompliqué tout ca
 
 
 
