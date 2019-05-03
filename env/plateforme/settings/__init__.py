@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'plateforme.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "nutella2",
-        'USER': 'postgres',
-        'PASSWORD': 'tiotio',
-        'HOST' : "127.0.0.1",
+        'NAME': "postgres",
+        'USER': '',
+        'PASSWORD': '',
+        'HOST' : "",
         'PORT' : '5432',
     }
 }
