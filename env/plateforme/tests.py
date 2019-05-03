@@ -10,12 +10,12 @@ class indexpagetest(TestCase):
     def test_home_page(self):
         """test home template"""
 
-        response = self.client.get(reverse('templates/home'))
+        response = self.client.get(reverse('/templates/home'))
         self.assertEqual(response.status_code,200)
         
 
     def test_mention_page(self):
         """test mention page"""
 
-        response = self.client.get(reverse('templtates/mention'))
+        response = self.client.get(reverse('/templtates/mention'))
         self.assertEqual(response.status_code,200)
