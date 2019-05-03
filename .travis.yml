@@ -1,8 +1,9 @@
 language: python
+
 python:
   - '3.5'
 
-# safelist
+
 branches:
   only:
     - staging1
@@ -17,5 +18,5 @@ services:
 env: DJANGO_SETTINGS_MODULE="plateforme.settings.travis"
 
 script:
-  - python env/manage.py test
+  - python env/manage.py test plateforme.tests
 
