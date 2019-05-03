@@ -1,12 +1,20 @@
 """Here we discuss with home, mention and errors templates"""
 
+
+import logging
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+
+logger = logging.getLogger(__name__)
 
 
 def home(request):
     """Template home"""
-       
+    logger.info('New search', exc_info=True, extra={
+        # Optionally pass a request and we'll grab any information we can
+    	'request': request,
+    })
+
     return render(request, "home.html", {})
 
 def mention(request):
