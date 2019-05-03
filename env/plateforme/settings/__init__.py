@@ -57,12 +57,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'plateforme.urls'
 
+TEMPLATE_DIRS = (
+   '/home/jb/projet-8/env/templates',
+)
 
-SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/jb/projet-8/env/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
