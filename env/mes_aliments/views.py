@@ -94,7 +94,10 @@ def searching(request):
  
                 a = better_nutri(search)     
 
-
+            logger.info('New search', exc_info=True, extra={
+                # Optionally pass a request and we'll grab any information we can
+                'request': request,
+            })
 
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
