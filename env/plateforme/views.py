@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     """Template home"""
-    djzpoajdpozajdpoajzpodjpodzj    
+       
     return render(request, "home.html", {})
 
 def mention(request):
