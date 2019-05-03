@@ -45,8 +45,6 @@ urlpatterns = [
     path('mes_aliments/error', error, name='error'),
 
 
-  
-
 
     
 ]
