@@ -56,14 +56,7 @@ def register_view(request):
         user.set_password(password)
         user.save()
 
-        data_food = foodAccount(name = user.username)
-        data_food.save()
 
-
-        create_database_user(user.username)
-        insert_database_user(user.username)
-        create_data_score_user(user.username)
-        insert_data_score_user(user.username)
 
         new_user = authenticate(username=user.username, password=password)
 
