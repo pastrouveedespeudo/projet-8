@@ -1,5 +1,7 @@
 # projet-8
 
+#oublie pas de mettre en debug false mtn t'as sentry
+
 #mettre tous les logs y'a juste ca qui marche pas ca dit pas -> cet aliment n'est pas en database en gros faut le mettre avant chaque return jcrois
 
 #une commande cron
