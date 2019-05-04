@@ -15,7 +15,7 @@ class data:
         
         conn = psycopg2.connect(database="plateforme",
                                 user="jb",
-                                host="157.230.34.183",
+                                host="127.0.0.1",
                                 password="tiotiotio333")
 
         cursor = conn.cursor()
@@ -46,7 +46,7 @@ class data:
 
         conn = psycopg2.connect(database="plateforme",
                                 user="jb",
-                                host="157.230.34.183",
+                                host="127.0.0.1",
                                 password="tiotiotio333")
 
         cursor = conn.cursor()

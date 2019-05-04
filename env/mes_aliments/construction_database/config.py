@@ -1,4 +1,4 @@
 DATABASE = "plateforme"
 USER = "jb"
-HOST = "157.230.34.183"
+HOST = "127.0.0.1"
 PASSWORD = "tiotiotio333"
