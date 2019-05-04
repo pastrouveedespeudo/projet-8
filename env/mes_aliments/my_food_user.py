@@ -1,45 +1,106 @@
-"""Here we discuss with database for
-food from user database"""
+"""This is functions for searching from database"""
 
 
-from accounts.models import *
-from mes_aliments.models import *
+from .config import DATABASE, USER, HOST, PASSWORD
+from django.contrib.auth import get_user_model
+from accounts.models import foodAccount
 
+User = get_user_model()
 
-def my_food_user(username):
-    """Here we take user food"""
+def controle_data_food(username):
+    """Here we watch if user have 6 products,
+    if he has -6 we ask him to select products
+    else we warned him to modify his selection"""
 
-    liste = []
     c = foodAccount.objects.get(name=username)
-    food = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
-            c.name_aliment4, c.name_aliment5, c.name_aliment6]
-    for i in food:
-        print(i)
-        liste.append(i)
-        
-    with open("mimi.py","w") as file:
-        file.write(str(liste))
-        print("fait")
-        print(liste)
-    return food
 
-def display_food(liste_aliment):
-    """Here we take informations food for template"""
-
-    liste_ali = []
-    try:
-        for i in liste_aliment:
-             z = aliment.objects.get(name_aliment=i)
-             liste = []
-             liste = [z.name_aliment, z.code_product_food,
-                      z.description, z.nutriscore,
-                      z.image, z.name_store, z.name_brand]
-
-             liste_ali.append(liste)
-     
-
-        return liste_ali
+    liste = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+             c.name_aliment4, c.name_aliment5, c.name_aliment6,]
     
-    except:
+    number = 0
+    for i in liste:
+        if i != "":
+            number += 1
+    
+    if number >= 6:
+        return "nombre de produit suppérieur a 6", False
+    
+    else:
+        return "stockage du produit possible", True
+
+
+def insert_food(username, food_name):
+    """He we insert food"""
+
+    c = foodAccount.objects.get(name=username)
+
+    print("ouiiiiiiiiiiiiiiiiiiiiiii")
+    if c.name_aliment1 == "":
+        c.name_aliment1 = food_name
+        c.save()
+        
+    elif c.name_aliment2 == "":
+        c.name_aliment2 = food_name
+        c.save()
+        
+    elif c.name_aliment3 == "":
+        c.name_aliment3 = food_name
+        c.save()
+        
+    elif c.name_aliment4 == "":
+        c.name_aliment4 = food_name
+        c.save()
+        
+    elif c.name_aliment5 == "":
+        c.name_aliment5 = food_name
+        c.save()
+        
+    elif c.name_aliment6 == "":
+        c.name_aliment6 = food_name
+        c.save()
+    
+    else:
+        print("trop d'aliment")
+
+ 
+def verify(data, liste):
+    if data == "":
         pass
-     
+    else:
+        number += 1
+    
+
+def verify2(data, food_name, variable):
+   
+    if data == food_name:
+    
+        variable =  False
+ 
+
+def verify3(data, food_name, variable, c, food):
+    if data == "" and variable != False:
+        data = '{}'.format(food_name)
+
+        
+        c.save()
+
+        variable2 = False
+    else:
+        pass
+
+
+def data_user(username):
+
+    c = foodAccount.objects.get(name=username)
+
+    liste = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+             c.name_aliment4, c.name_aliment5, c.name_aliment6,]
+
+
+    return liste
+
+
+
+
+
+
