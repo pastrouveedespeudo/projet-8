@@ -56,7 +56,8 @@ def register_view(request):
         user.set_password(password)
         user.save()
 
-
+        data_food = foodAccount(name = user.username)
+        data_food.save()
 
         new_user = authenticate(username=user.username, password=password)
 
