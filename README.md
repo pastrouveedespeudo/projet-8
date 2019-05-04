@@ -4,7 +4,7 @@
 
 #mtn faut que je fasse une commande cron et newrelic ben c'est ompliqué tout ca
 
-
+#c vrai qu'on dirait que jve me faire sculter la gueule jai trop matté astérix... ou alors je regarder par la fenetre pour pas me focus sur la video ou alors inconsciement jve me faire sculter la gueule... ou les deux si ca me fait baisser mon qi okok je veux me faire sculter la gueule
 
 #https://openfactfood.herokuapp.com
 
