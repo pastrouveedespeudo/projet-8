@@ -7,10 +7,10 @@ def dela():
     """Here we search food picture """
  
  
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
+    conn = psycopg2.connect(database='plateforme',
+                            user='jb',
+                            host='127.0.0.1',
+                            password='tiotiotio333') 
     cur = conn.cursor()
 
     cur.execute("""DELETE FROM mes_aliments_aliment
