@@ -1,10 +1,9 @@
 # projet-8
 
-#oublie pas de mettre en debug false mtn t'as sentry
+
 
 #mettre tous les logs y'a juste ca qui marche pas ca dit pas -> cet aliment n'est pas en database en gros faut le mettre avant chaque return jcrois
 
-#une commande cron
 
 #c vrai qu'on dirait que jve me faire sculter la gueule jai trop matté astérix...  j'ai plus rien a matter... ou alors je regarder par la fenetre pour pas me focus sur la video ou alors inconsciement jve me faire sculter la gueule... ou les deux si ca me fait baisser mon qi okok je veux me faire sculter la gueule ou alpors y'avait mon text ecrit sur la fenetre
 
