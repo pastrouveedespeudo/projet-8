@@ -85,6 +85,12 @@ class create_tables:
         conn.commit()
 
 
+
+
+
+
+
+
 if __name__ == "__main__":
 
     creation = create_tables()      
