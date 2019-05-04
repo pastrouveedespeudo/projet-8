@@ -1,6 +1,6 @@
 # projet-8
 
-#probleme avec la base de donnée
+#probleme avec la base de donnée -> foodAccount n'est pas créé ou un truk comme ca
 
 #mtn faut que je fasse une commande cron et newrelic ben c'est ompliqué tout ca
 
