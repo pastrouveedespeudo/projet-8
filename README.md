@@ -1,8 +1,10 @@
 # projet-8
 
+#probleme avec la base de donnée
+
+#mtn faut que je fasse une commande cron et newrelic ben c'est ompliqué tout ca
 
 
-#ben ca marche mais j'ai pas compris comment du coup chui pas apaisé... si enfete ca va mieux
 
 #https://openfactfood.herokuapp.com
 
