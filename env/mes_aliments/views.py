@@ -133,7 +133,7 @@ def searching(request):
                 
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
-    logger.info("hello")
+  
     image = '/static/img/header1.jpg'
     return render(request, 'recherche.html', {'image':image})
 
@@ -177,6 +177,7 @@ def my_food(request):
                                                    "fffff":str(a[5][0]),
                                                     })
     except:
+        capture_message('user havnt got his selection')
         message = "Veuillez remplir votre selection d'aliment de 6 produit svp =) "
         return render(request, 'error.html', {"message":message})
 
@@ -291,6 +292,7 @@ def replacing(request):
 
                                                        })
     except:
+        capture_message('this food isn\'t into in our database')
         return render(request, 'mes_aliments.html')
 
 
