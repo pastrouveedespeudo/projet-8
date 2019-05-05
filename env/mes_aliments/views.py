@@ -13,6 +13,7 @@ from .algo_open import *
 from .my_food_user import *
 
 import logging
+from sentry_sdk import capture_message
 
 logger = logging.getLogger(__name__)
 
@@ -92,7 +93,7 @@ def searching(request):
 
             try:
                 a = better_nutri(search)     
-                logger.info("hello")
+                
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
                                "b":str(a[1][3]),
@@ -128,9 +129,8 @@ def searching(request):
                                })
 
             except:	
-                logger.info("new recherche", exc_info=True, extra={'search':search,})
-                logging.info("aliment non présent dans la database", exc_info=True)
-                logging.info("hello")
+                capture_message('this food isn\'t into in our database')
+                
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
     logger.info("hello")
