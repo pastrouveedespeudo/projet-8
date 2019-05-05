@@ -8,10 +8,10 @@ class delete:
 
     def delete_data_categorie(self):
 
-        conn = psycopg2.connect(database="DATABASE",
-                                user="USER",
-                                host="HOST",
-                                password="PASSWORD")
+        conn = psycopg2.connect(database="plateforme",
+                                user="jb",
+                                host="127.0.0.1",
+                                password="tiotiotio333")
         
 
         cur = conn.cursor()
@@ -24,10 +24,10 @@ class delete:
 
     def delete_data_aliment(self):
 
-        conn = psycopg2.connect(database="DATABASE",
-                                user="USER",
-                                host="HOST",
-                                password="PASSWORD")
+        conn = psycopg2.connect(database="plateforme",
+                                user="jb",
+                                host="127.0.0.1",
+                                password="tiotiotio333")
 
         cur = conn.cursor()
         
@@ -99,9 +99,9 @@ class delete:
 
 
 yo = delete()
-#yo.delete_data_categorie()
-#yo.delete_data_aliment()
+yo.delete_data_categorie()
+yo.delete_data_aliment()
 #yo.delete_tables_brand()
-yo.delete_tables_aliment()
+#yo.delete_tables_aliment()
 #yo.delete_tables_store()
-yo.delete_tables_categorie()
+#yo.delete_tables_categorie()
