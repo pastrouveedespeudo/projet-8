@@ -1,8 +1,6 @@
 # projet-8
 
-fais un rapport dans crontest genre echo jour mois année delete_virugle effectué
-
-#faire les log mais moi ca le met pas quand je retnre un truk pas bon dans aliments...
+#yessss pour la présentation bien expliqué toutes les techniques ouaaa j'ai souffert du genre ronger mes oncle de pieds et nan chui pas assez souple pfff jvai devoir genre attendre un mois mtn
 
 
 
