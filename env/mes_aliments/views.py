@@ -129,7 +129,8 @@ def searching(request):
 
             except:	
                 logger.info("new recherche", exc_info=True, extra={'search':search,})
-                logger.info("hello")
+                logging.info("aliment non présent dans la database", exc_info=True)
+                logging.info("hello")
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
     logger.info("hello")
