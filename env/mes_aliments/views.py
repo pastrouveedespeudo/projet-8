@@ -133,9 +133,7 @@ def searching(request):
                                })
 
             except:	
-		logger.info("new recherche", exc_info=True, extra={
-		    'request':request,
-		})
+                logger.info("new recherche", exc_info=True, extra={'request':request,})
 
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
