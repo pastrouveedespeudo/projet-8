@@ -1,8 +1,9 @@
 # projet-8
 
-
+fais un rapport dans crontest genre echo jour mois année delete_virugle effectué
 
 #faire les log mais moi ca le met pas quand je retnre un truk pas bon dans aliments...
+
 
 
 #https://openfactfood.herokuapp.com
