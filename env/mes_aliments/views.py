@@ -129,7 +129,7 @@ def searching(request):
                                })
 
             except:	
-                capture_message('this food isn\'t into in our database')
+                capture_message('this food isn\'t into in our database :', search)
                 
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
@@ -177,7 +177,7 @@ def my_food(request):
                                                    "fffff":str(a[5][0]),
                                                     })
     except:
-        capture_message('user havnt got his selection')
+        capture_message('user havnt got his selection', user.username)
         message = "Veuillez remplir votre selection d'aliment de 6 produit svp =) "
         return render(request, 'error.html', {"message":message})
 
@@ -292,7 +292,7 @@ def replacing(request):
 
                                                        })
     except:
-        capture_message('this food isn\'t into in our database')
+        capture_message('this user has already this food')
         return render(request, 'mes_aliments.html')
 
 
