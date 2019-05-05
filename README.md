@@ -1,10 +1,10 @@
 # projet-8
 
-#probleme avec la base de donnée -> foodAccount n'est pas créé ou un truk comme ca
+fais un rapport dans crontest genre echo jour mois année delete_virugle effectué
 
-#mtn faut que je fasse une commande cron et newrelic ben c'est ompliqué tout ca
+#faire les log mais moi ca le met pas quand je retnre un truk pas bon dans aliments...
 
-#c vrai qu'on dirait que jve me faire sculter la gueule jai trop matté astérix...  j'ai plus rien a matter... ou alors je regarder par la fenetre pour pas me focus sur la video ou alors inconsciement jve me faire sculter la gueule... ou les deux si ca me fait baisser mon qi okok je veux me faire sculter la gueule ou alpors y'avait mon text ecrit sur la fenetre
+
 
 #https://openfactfood.herokuapp.com
 
