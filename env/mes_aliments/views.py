@@ -92,7 +92,7 @@ def searching(request):
 
             try:
                 a = better_nutri(search)     
-
+                logger.info("hello")
                 return render(request, 'recherche.html',
                               {"a":str(a[0][3]),
                                "b":str(a[1][3]),
@@ -129,10 +129,10 @@ def searching(request):
 
             except:	
                 logger.info("new recherche", exc_info=True, extra={'search':search,})
-
+                logger.info("hello")
                 message = "oups nous n'avons pas cet aliment en database"
                 return render(request, 'error.html', {"message":message})
-
+    logger.info("hello")
     image = '/static/img/header1.jpg'
     return render(request, 'recherche.html', {'image':image})
 
