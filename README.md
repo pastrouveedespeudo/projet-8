@@ -1,5 +1,23 @@
 # projet-8
 
+#cron 
+
+#sentry  
+
+#log 
+
+#digital océan 
+
+#new relic
+
+#serveur linux
+
+#travis
+
+
+
+
+
 #yessss pour la présentation bien expliqué toutes les techniques ouaaa j'ai souffert du genre ronger mes oncle de pieds et nan chui pas assez souple pfff jvai devoir genre attendre un mois mtn
 
 
