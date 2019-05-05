@@ -177,7 +177,7 @@ def my_food(request):
                                                    "fffff":str(a[5][0]),
                                                     })
     except:
-        capture_message('user havnt got his selection', user.username)
+        capture_message('user havnt got his selection')
         message = "Veuillez remplir votre selection d'aliment de 6 produit svp =) "
         return render(request, 'error.html', {"message":message})
 
