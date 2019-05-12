@@ -17,3 +17,9 @@ JBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 10
 JBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 10
+del virgula
+del data done
+del data no found
+update data : Sun May 12 00:00:01 UTC 2019
+del charactere
+add food done
