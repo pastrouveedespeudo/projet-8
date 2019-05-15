@@ -1,6 +1,7 @@
 from django.urls import reverse
 from django.test import TestCase
 from .models import *
+from accounts.models import *
 
 class test_page_aliment(TestCase):
 
@@ -183,28 +184,162 @@ class test_aliment(TestCase):
 
 
 
+    def test_food_details(self):
+                
+        cat = categorie.objects.create(id=1,
+                                       name_categorie='legume')
+    
+
+        food = aliment.objects.create(name_aliment='champignon',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://champi.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+
+        
+        out = food.image
+        self.assertEqual(out, 'htps://champi.com')
+
+
+
+    def test_replace(self):
+        
+        cat = categorie.objects.create(id=1,
+                                       name_categorie='legume')
+    
+
+        food1 = aliment.objects.create(name_aliment='carotte',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://carotte.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+        
+        food2 = aliment.objects.create(name_aliment='tomate',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://carotte.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+
+        food3 = aliment.objects.create(name_aliment='olive',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://carotte.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+
+        food4 = aliment.objects.create(name_aliment='epinard',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://carotte.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+
+
+
+        food5 = aliment.objects.create(name_aliment='cassoulet',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://carotte.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+
+
+        food6 = aliment.objects.create(name_aliment='champignon',
+                                      code_product_food='4649849',
+                                      description='caroote',
+                                      nutriscore='a',
+                                      image='htps://champi.com',
+                                      name_store='marche',
+                                      name_brand='marche',
+                                      id_categorie_id=1)
+
+
+        
+
+        liste = []
+
+        food = aliment.objects.get(name_aliment='carotte')
+        aliment_recherché = [food.name_aliment, food.id_categorie_id,
+                            food.nutriscore, food.image, food.id]
+
+        category = aliment.objects.filter(id_categorie_id=food.id_categorie_id)
+        
+        for i in category:
+            
+            a = []
+  
+            a = [i.name_aliment, i.id_categorie_id,
+                 i.nutriscore, i.image]
+            
+            liste.append(a)
+
+
+
+        liste = liste[:6]
+        liste[0] = aliment_recherché
+
+        out = liste
+
+        self.assertEqual(out, [['carotte', 1,'a','htps://carotte.com',10],
+                               ['cassoulet', 1,'a','htps://carotte.com'],
+                               ['epinard',1,'a','htps://carotte.com'],
+                               ['olive', 1,'a','htps://carotte.com'],
+                               ['tomate',1,'a','htps://carotte.com'],
+                               ['carotte',1,'a','htps://carotte.com']]
+
+                            )
 
     
 
+    def test_page_mes_aliments(self):
 
 
 
 
+        
+        a = foodAccount.objects.create(name='jb')
+        
+        a.name_aliment1='marshmallow'
+        a.save()
+        
+        a.name_aliment2='dragibus'
+        a.save()
+        
+        a.name_aliment3='coca ou fanta'
+        a.save()
+        
+        a.name_aliment4='ice tea !!'
+        a.save()
+        
+        a.name_aliment4='salade'
+        a.save()
+        
+        a.name_aliment4='chien'
+        a.save()
+        
+        a.name_aliment6='pomme pour se sentir non coupable'
+        a.save()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        response = self.client.get(reverse('mes_aliments'))
+        self.assertEqual(response.status_code,200)
 
 
 
