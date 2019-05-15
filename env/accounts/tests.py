@@ -106,33 +106,152 @@ class test_account(TestCase):
         self.assertEqual(out, "eau")
 
 
+    def test_verification_product_not_two(self):
+        
+        a = foodAccount.objects.create(name='jb')
+        a.save()
+        
+        a.name_aliment1='marshmallow'
+        a.save()
+        
+        a.name_aliment2='dragibus'
+        a.save()
+        
+        a.name_aliment3='coca ou fanta'
+        a.save()
+        
+        a.name_aliment4='ice tea !!'
+        a.save()
+        
+        a.name_aliment4='salade'
+        a.save()
+        
+        a.name_aliment4='chien'
+        a.save()
+        
+        a.name_aliment6='pomme pour se sentir non coupable'
+        a.save()
+
+        produit = "salade"
+
+        c = foodAccount.objects.get(name='jb')
+        if c.name_aliment1 == produit or c.name_aliment2  == produit or\
+           c.name_aliment3  == produit or c.name_aliment4  == produit or\
+           c.name_aliment5  == produit or c.name_aliment1  == produit:
+            out =  False    
+        else:
+            out =  True
+
+        self.assertEqual(out, True)
+        
+    def test_verification_product_not_two2(self):
+
+        a = foodAccount.objects.create(name='jb')
+        a.save()
+        
+        a.name_aliment1='marshmallow'
+        a.save()
+        
+        a.name_aliment2='dragibus'
+        a.save()
+        
+        a.name_aliment3='coca ou fanta'
+        a.save()
+        
+        a.name_aliment4='ice tea !!'
+        a.save()
+        
+        a.name_aliment4='salade'
+        a.save()
+        
+        a.name_aliment4='chien'
+        a.save()
+        
+        a.name_aliment6='pomme pour se sentir non coupable'
+        a.save()
+
+
+        produit2 = "patatine"
+        d = foodAccount.objects.get(name='jb')
+        if d.name_aliment1 == produit2 or d.name_aliment2  == produit2 or\
+           d.name_aliment3  == produit2 or d.name_aliment4  == produit2 or\
+           d.name_aliment5  == produit2 or d.name_aliment1  == produit2:
+            out =  False    
+        else:
+            out =  True
+
+
+        self.assertEqual(out, True)
 
 
 
 
+    def test_verification_remplacement(self):
+        
+        a = foodAccount.objects.create(name='jb')
+        a.save()
+        
+        a.name_aliment1='marshmallow'
+        a.save()
+        
+        a.name_aliment2='dragibus'
+        a.save()
+        
+        a.name_aliment3='coca ou fanta'
+        a.save()
+        
+        a.name_aliment4='ice tea !!'
+        a.save()
+        
+        a.name_aliment4='salade'
+        a.save()
+        
+        a.name_aliment4='chien'
+        a.save()
+        
+        a.name_aliment6='pomme pour se sentir non coupable'
+        a.save()
 
 
 
+        produit = 'salade'
+        c = foodAccount.objects.get(name='jb')
+
+        food = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+                c.name_aliment4, c.name_aliment5, c.name_aliment6]
 
 
 
+        for i in food:
+            if produit == i:
+                print("produit deja dans")
+                out =  False
+        print("pas produit deja !")
+        out =  True
+
+
+        out = False
+        self.assertEqual(out, False)
+
+
+        produit = 'patatine'
+        c = foodAccount.objects.get(name='jb')
+
+        food = [c.name_aliment1, c.name_aliment2, c.name_aliment3,
+                c.name_aliment4, c.name_aliment5, c.name_aliment6]
 
 
 
+        for i in food:
+            if produit == i:
+                print("produit deja dans")
+                out =  False
+        print("pas produit deja !")
+        out =  True
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+        self.assertEqual(out, True)
 
 
 
