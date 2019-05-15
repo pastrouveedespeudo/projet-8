@@ -1,28 +1,8 @@
 # projet-8
 
-#cron 
+p11 : Amélioration: jeux
 
-#sentry  
-
-#log 
-
-#digital océan 
-
-#new relic
-
-#serveur linux
-
-#travis
-
-
-
-
-
-#yessss pour la présentation bien expliqué toutes les techniques ouaaa j'ai souffert du genre ronger mes oncle de pieds et nan chui pas assez souple pfff jvai devoir genre attendre un mois mtn
-
-
-
-#https://openfactfood.herokuapp.com
+#https://openfactfood.herokuapp.com 
 
 #Bienvenu sur notre site d'aliment, ce site a pour but de choisir des aliments depuis la database d'openfactfood. C'est un super site qui score les aliments en "nutriscore". 
 
