@@ -1,8 +1,6 @@
 import psycopg2
 from config import DATABASE, USER, HOST, PASSWORD
 
-
-
 def replace():
     """Here we search food picture """
  
