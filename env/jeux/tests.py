@@ -4,7 +4,6 @@ from django.test import TestCase
 from mes_aliments.models import *
 
 
-
 class test_page_jeux(TestCase):
 
     def test_mes_aliments_page(self):        
