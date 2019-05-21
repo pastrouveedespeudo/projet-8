@@ -8,7 +8,6 @@ from django.http import JsonResponse
 from .verification_reponse import *
 import random
 
-
 def jeux(request):
 
     current_user = request.user
