@@ -3,6 +3,7 @@ from django.test import TestCase
 from .models import *
 from accounts.models import *
 
+
 class test_page_aliment(TestCase):
 
     def test_mes_aliments_page(self):        
