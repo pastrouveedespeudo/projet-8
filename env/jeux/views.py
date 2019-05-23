@@ -203,7 +203,7 @@ def jeux(request):
             verif_nutri = food.nutriscore
  
             if verif_nutri == "a":
-                liste = ['bien joué', 'particpe a top chef', 'formidable']
+                liste = ['bien joué', 'participe à top chef', 'formidable']
                 message = random.choice(liste)
 
 
