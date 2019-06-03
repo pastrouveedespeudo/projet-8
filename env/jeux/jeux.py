@@ -3,8 +3,14 @@ import psycopg2
 import random
 from .config import *
 from mes_aliments.models import *
+import urllib.request
+import shutil
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
 
-def choix_aliment_niveau_1():
+
+def choice_food_level1():
 
     choice = aliment.objects.all().filter(nutriscore='a')
     food = random.choice(choice)
@@ -29,28 +35,91 @@ def choix_aliment_niveau_1():
     
     liste_3_not_a = [un, deux, trois]
 
+
     return liste_food_a, liste_3_not_a
 
 
-def choix_aliment_niveau_2():
+def choice_food_level2():
 
     choice = aliment.objects.all().filter(nutriscore='a')
     food = random.choice(choice)
-    picture = food.image
+    picture = str(food.image)
 
     liste_food_a = [picture]
 
 
     liste = []
+    c = 0
     choice2 = aliment.objects.all().exclude(nutriscore='a')
-
     for i in choice2:
-        liste.append(i.image)
+        liste.append(str(i.image))
+        nom = str(c) + '.jpg'
+        urllib.request.urlretrieve(str(i.image), nom)
+        shutil.move(nom, r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
+        c+=1
+        
+    liste = set(liste)
+    liste = list(liste)
 
-    liste2 = []
-    for i in range(7):
-        random_food = random.choice(liste)
-        liste2.append(random_food)
+
+    os.chdir(r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
+    liste9 = os.listdir()
+
+    c = 0
+    for i in liste9:
+        for j in liste9:
+            img1 = cv2.imread(i)
+            img2 = cv2.imread(j)
+
+            orb = cv2.ORB_create()
+
+            kp1, des1 = orb.detectAndCompute(img1,None)
+            kp2, des2 = orb.detectAndCompute(img2,None)
+
+            bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+            matches = bf.match(des1,des2)
+
+            matches = sorted(matches, key = lambda x:x.distance)
+
+            c = 0
+            for match in matches:
+                c+=1
+        
+            if c > 300:
+                pass
+            else:
+                os.remove(j)
+
+            c = 0
+
+            
+        c+=1
+
+
+    
+
+
+    un = random.choice(liste)
+    liste.remove(un)
+    deux = random.choice(liste)
+    liste.remove(deux)
+    trois = random.choice(liste)
+    liste.remove(trois)
+    quattre = random.choice(liste)
+    liste.remove(quattre)
+    cinq = random.choice(liste)
+    liste.remove(cinq)
+    six = random.choice(liste)
+    liste.remove(six)
+    sept = random.choice(liste)
+    liste.remove(sept)
+
+    
+    liste2 = [un, deux, trois, quattre, cinq, six, sept]
+
+    for i in liste2:
+        print(i)
+        print('\n')
         
     return liste_food_a, liste2
 
