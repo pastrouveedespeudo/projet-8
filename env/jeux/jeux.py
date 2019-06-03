@@ -77,7 +77,6 @@ def choice_food_level2():
             if i == j:
                 pass
             else:
-                print(i,j)
                 try:
                     img1 = cv2.imread(i)
                     img2 = cv2.imread(j)
@@ -97,11 +96,10 @@ def choice_food_level2():
                         c+=1
                 
                     if c < 300:
-                        print(c)
+                        pass
                     else:
-                        print(c)
                         os.remove(j)
-                        print(j, 'REMOVEEEEEEEEEEEEEEEE44')
+
 
                     c = 0
                 except:
@@ -109,32 +107,28 @@ def choice_food_level2():
             
         c+=1
 
-    liste10 = os.listdir()
-    un = random.choice(liste10)
-    liste10.remove(un)
-    deux = random.choice(liste10)
-    liste10.remove(deux)
-    trois = random.choice(liste10)
-    liste10.remove(trois)
-    quattre = random.choice(liste10)
-    liste10.remove(quattre)
-    cinq = random.choice(liste10)
-    liste10.remove(cinq)
-    six = random.choice(liste10)
-    liste10.remove(six)
-    sept = random.choice(liste10)
-    liste10.remove(sept)
 
-    
-    liste2 = [liste_im_c[int(un[:-4])][0], liste_im_c[int(deux[:-4])][0], liste_im_c[int(trois[:-4])][0],
-                liste_im_c[int(quattre[:-4])][0], liste_im_c[int(cinq[:-4])][0], liste_im_c[int(six[:-4])][0],
-              liste_im_c[int(sept[:-4])][0]
-              ]
+
+    liste10 = os.listdir()
+
+    liste2 = []
+
+    c = 0
+    for i in range(len(liste10)):
+  
+        liste2.append(liste_im_c[int(liste10[c][:-4])][0])
+        c+=1
+
 
     for i in liste2:
         print(i)
-        print('\n')
+
         
+    for i in liste10:
+        os.remove(i)
+
+    
+    
     return liste_food_a, liste2
 
 
