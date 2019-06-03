@@ -41,101 +41,59 @@ def choice_food_level1():
 
 def choice_food_level2():
 
+    
     choice = aliment.objects.all().filter(nutriscore='a')
     food = random.choice(choice)
+    name = food.name_aliment
+    nutri = food.nutriscore
     picture = str(food.image)
 
     liste_food_a = [picture]
 
-
-    liste = []
-    c = 0
-    choice2 = aliment.objects.all().exclude(nutriscore='a')
-
-    liste_im_c = []
     
-    for i in choice2:
-        liste_im_c.append([str(i.image), c])
-        liste.append(str(i.image))
-        nom = str(c) + '.jpg'
-        urllib.request.urlretrieve(str(i.image), nom)
-        shutil.move(nom, r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
-        c+=1
-        
-    liste = set(liste)
-    liste = list(liste)
+    conn = psycopg2.connect(database="deed0vc5eh1n6g",
+                            user="hylgxgwfjacgtj",
+                            host="ec2-54-225-95-183.compute-1.amazonaws.com",
+                            password="2509ffb8ec855b2a37e2d1b80e0521d942219ad4d55a4abb6c1f5093000f6489")
 
+
+    cur = conn.cursor()
+
+    cur.execute("""select * from mes_aliments_aliment where nutriscore != 'a';""")
+
+    conn.commit()
+    
+    rows = cur.fetchall()
+
+    the_liste = []
+    for i in rows:
+        c = 0
+        for j in i:
+            if c == 5:
+                the_liste.append(j)
+            c += 1
+
+    #path = '/app/static/img_open'
     path = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open'
-    path1 = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open\{}'
     os.chdir(path)
-    liste9 = os.listdir()
+    liste = os.listdir()
 
-    c = 0
-    
-    for i in liste9:
-        for j in liste9:
-            if i == j:
-                pass
-            else:
-                try:
-                    img1 = cv2.imread(i)
-                    img2 = cv2.imread(j)
+    liliste = []
+    for i in range(7):
+ 
+        a = random.choice(liste)
+        liliste.append(a)
+        liste.remove(a)
+  
 
-                    orb = cv2.ORB_create()
-
-                    kp1, des1 = orb.detectAndCompute(img1,None)
-                    kp2, des2 = orb.detectAndCompute(img2,None)
-
-                    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-                    matches = bf.match(des1,des2)
-
-                    matches = sorted(matches, key = lambda x:x.distance)
-
-                    c = 0
-                    for match in matches:
-                        c+=1
-                
-                    if c < 300:
-                        pass
-                    else:
-                        os.remove(j)
-
-
-                    c = 0
-                except:
-                    pass
-            
-        c+=1
-
-
-
-    liste10 = os.listdir()
 
     liste2 = []
+    for i in liliste:
+        liste2.append(the_liste[int(i[:-4])])
 
-    c = 0
-    for i in range(len(liste10)):
-  
-        liste2.append(liste_im_c[int(liste10[c][:-4])][0])
-        c+=1
-
-
-    for i in liste2:
-        print(i)
-
+    
         
-    for i in liste10:
-        os.remove(i)
-
-    
-    
     return liste_food_a, liste2
-
-
-
-
-
-
 
 
 
