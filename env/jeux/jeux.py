@@ -8,7 +8,7 @@ import shutil
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
-
+import os
 
 def choice_food_level1():
 
@@ -51,73 +51,85 @@ def choice_food_level2():
     liste = []
     c = 0
     choice2 = aliment.objects.all().exclude(nutriscore='a')
+
+    liste_im_c = []
     
     for i in choice2:
+        liste_im_c.append([str(i.image), c])
         liste.append(str(i.image))
         nom = str(c) + '.jpg'
-        urllib.request.urlretrieve(str(i.image), str(i.image))
-        shutil.move(str(i.image), r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
+        urllib.request.urlretrieve(str(i.image), nom)
+        shutil.move(nom, r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
         c+=1
         
     liste = set(liste)
     liste = list(liste)
 
-
-    os.chdir(r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
+    path = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open'
+    path1 = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open\{}'
+    os.chdir(path)
     liste9 = os.listdir()
 
     c = 0
     
     for i in liste9:
         for j in liste9:
-            
-            img1 = cv2.imread(i)
-            img2 = cv2.imread(j)
-
-            orb = cv2.ORB_create()
-
-            kp1, des1 = orb.detectAndCompute(img1,None)
-            kp2, des2 = orb.detectAndCompute(img2,None)
-
-            bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-            matches = bf.match(des1,des2)
-
-            matches = sorted(matches, key = lambda x:x.distance)
-
-            c = 0
-            for match in matches:
-                c+=1
-        
-            if c > 300:
-                print(c)
+            if i == j:
+                pass
             else:
-                print(c)
-                os.remove(j)
+                print(i,j)
+                try:
+                    img1 = cv2.imread(i)
+                    img2 = cv2.imread(j)
 
-            c = 0
+                    orb = cv2.ORB_create()
 
+                    kp1, des1 = orb.detectAndCompute(img1,None)
+                    kp2, des2 = orb.detectAndCompute(img2,None)
+
+                    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+                    matches = bf.match(des1,des2)
+
+                    matches = sorted(matches, key = lambda x:x.distance)
+
+                    c = 0
+                    for match in matches:
+                        c+=1
+                
+                    if c < 300:
+                        print(c)
+                    else:
+                        print(c)
+                        os.remove(j)
+                        print(j, 'REMOVEEEEEEEEEEEEEEEE44')
+
+                    c = 0
+                except:
+                    pass
             
         c+=1
 
     liste10 = os.listdir()
-    
     un = random.choice(liste10)
-    liste.remove(un)
+    liste10.remove(un)
     deux = random.choice(liste10)
-    liste.remove(deux)
+    liste10.remove(deux)
     trois = random.choice(liste10)
-    liste.remove(trois)
+    liste10.remove(trois)
     quattre = random.choice(liste10)
-    liste.remove(quattre)
+    liste10.remove(quattre)
     cinq = random.choice(liste10)
-    liste.remove(cinq)
+    liste10.remove(cinq)
     six = random.choice(liste10)
-    liste.remove(six)
+    liste10.remove(six)
     sept = random.choice(liste10)
-    liste.remove(sept)
+    liste10.remove(sept)
 
     
-    liste2 = [un, deux, trois, quattre, cinq, six, sept]
+    liste2 = [liste_im_c[int(un[:-4])][0], liste_im_c[int(deux[:-4])][0], liste_im_c[int(trois[:-4])][0],
+                liste_im_c[int(quattre[:-4])][0], liste_im_c[int(cinq[:-4])][0], liste_im_c[int(six[:-4])][0],
+              liste_im_c[int(sept[:-4])][0]
+              ]
 
     for i in liste2:
         print(i)
