@@ -47,7 +47,7 @@ def niveau2(message):
 
     one = choice_food_level2()
 
-
+    print(one)
 
 
     picture = [one[0][0], one[1][0], one[1][1],
@@ -76,7 +76,7 @@ def niveau2(message):
 
     data = {"image1":i, "image2":j,"image3":k,"image4":l,
             "image5":m, "image6":n,"image7":o,"image8":p, 'message':message}
-  
+
     return data
 
 
