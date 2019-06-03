@@ -41,18 +41,20 @@
         </div>
       </div>
     </div>
+    
   </header>
 
 
 
   
-  <div id='score'></div>
+
 
 
 </div>
   <section class="bg-primary" id="about">
     <center><p>Selon toi, lequels de ces articles à un nutriscore de A</p></center>
-   
+    <center><p id='imgg' style='color:red; display:none'>Ca peut prendre un peu de temps</p></center>
+
     <div id="jeux">
     
                                                      
@@ -437,6 +439,7 @@
 
     $("#niveau2").on("click", function(e){
          e.preventDefault();
+         document.getElementById('imgg').style.display = 'block';
          document.getElementById('cont1').style.display = 'none';
           $.ajax({
               data:{
@@ -512,7 +515,7 @@
 
 
                   document.getElementById('cont2').style.display ='block';
-
+                  document.getElementById('imgg').style.display = 'none';
                   
               };
               
@@ -608,7 +611,6 @@
 
              
 </script>
-
 
 
 
