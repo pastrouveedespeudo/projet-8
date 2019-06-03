@@ -1,6 +1,8 @@
 # projet-8
 
 
+bon ben chercher une solution, ca prend pas xlib6 pfffff c grace frustrant sté cool
+
 p11 : Amélioration: jeux
 
 #https://openfactfood.herokuapp.com 
