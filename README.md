@@ -1,7 +1,7 @@
 # projet-8
 
 
-bon ben chercher une solution, ca prend pas xlib6 pfffff c grace frustrant sté cool
+regler les assertionfail
 
 p11 : Amélioration: jeux
 
