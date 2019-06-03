@@ -51,11 +51,12 @@ def choice_food_level2():
     liste = []
     c = 0
     choice2 = aliment.objects.all().exclude(nutriscore='a')
+    
     for i in choice2:
         liste.append(str(i.image))
         nom = str(c) + '.jpg'
-        urllib.request.urlretrieve(str(i.image), nom)
-        shutil.move(nom, r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
+        urllib.request.urlretrieve(str(i.image), str(i.image))
+        shutil.move(str(i.image), r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
         c+=1
         
     liste = set(liste)
@@ -66,8 +67,10 @@ def choice_food_level2():
     liste9 = os.listdir()
 
     c = 0
+    
     for i in liste9:
         for j in liste9:
+            
             img1 = cv2.imread(i)
             img2 = cv2.imread(j)
 
@@ -86,8 +89,9 @@ def choice_food_level2():
                 c+=1
         
             if c > 300:
-                pass
+                print(c)
             else:
+                print(c)
                 os.remove(j)
 
             c = 0
@@ -95,23 +99,21 @@ def choice_food_level2():
             
         c+=1
 
-
+    liste10 = os.listdir()
     
-
-
-    un = random.choice(liste)
+    un = random.choice(liste10)
     liste.remove(un)
-    deux = random.choice(liste)
+    deux = random.choice(liste10)
     liste.remove(deux)
-    trois = random.choice(liste)
+    trois = random.choice(liste10)
     liste.remove(trois)
-    quattre = random.choice(liste)
+    quattre = random.choice(liste10)
     liste.remove(quattre)
-    cinq = random.choice(liste)
+    cinq = random.choice(liste10)
     liste.remove(cinq)
-    six = random.choice(liste)
+    six = random.choice(liste10)
     liste.remove(six)
-    sept = random.choice(liste)
+    sept = random.choice(liste10)
     liste.remove(sept)
 
     
