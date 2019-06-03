@@ -2,6 +2,8 @@
 
 mettre les images de meme taille bon go dormir et si ca marche pas ben trouve un autre truk ou efface le niveau deux ou fait 2 images a cliquer
 
+de toute facon y'a le time out
+
 p11 : Amélioration: jeux
 
 #https://openfactfood.herokuapp.com 
