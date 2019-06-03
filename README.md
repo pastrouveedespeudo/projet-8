@@ -1,5 +1,11 @@
 # projet-8
 
+#faire continuer2
+
+#faire un logo de chargement
+
+
+
 p11 : Amélioration: jeux
 
 #https://openfactfood.herokuapp.com 
