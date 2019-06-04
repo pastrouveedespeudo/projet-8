@@ -2,7 +2,6 @@ import sqlite3
 import psycopg2
 import random
 
-
 import urllib.request
 import shutil
 import cv2
@@ -13,9 +12,30 @@ import os
 import psycopg2
 from PIL import Image
 
-def delete():
+def new_table():
+    
+    conn = psycopg2.connect(database="deed0vc5eh1n6g",
+                            user="hylgxgwfjacgtj",
+                            host="ec2-54-225-95-183.compute-1.amazonaws.com",
+                            password="2509ffb8ec855b2a37e2d1b80e0521d942219ad4d55a4abb6c1f5093000f6489")
+    
 
-    path = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open'
+    cur = conn.cursor()
+
+    cur.execute("""create table niveau2(
+                id serial PRIMARY KEY,
+                image varchar(100));""")
+
+    conn.commit()
+
+
+
+
+
+    
+def img_to_path():
+
+    #path = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open'
 
     
     conn = psycopg2.connect(database="deed0vc5eh1n6g",
@@ -40,21 +60,21 @@ def delete():
                 liste.append(j)
             c += 1
 
-    print(liste)
+  
     c1 = 0
     for i in liste:
         nom = str(c1) + '.jpg'
         urllib.request.urlretrieve(i, nom)
        
-        shutil.move(nom, path)
+        shutil.move(nom, r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
         c1+=1
 
+    return liste
 
-    path = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open'
-    path1 = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open\{}'
-    os.chdir(path)
-        
 
+def matching():
+
+    os.chdir(r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
     liste9 = os.listdir()
     print(len(liste9))
     c = 0
@@ -65,7 +85,6 @@ def delete():
                 pass
             else:
                 try:
-       
                     img1 = cv2.imread(i)
                     img2 = cv2.imread(j)
 
@@ -95,8 +114,88 @@ def delete():
             
         c+=1
     
-    liliste = os.listdir()
-    print(len(liliste))
+   
 
 
-delete()
+
+
+def insertion_database():
+    
+
+    os.chdir(r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open')
+    liste = os.listdir()
+
+    print(len(liste))
+
+    
+    conn = psycopg2.connect(database="deed0vc5eh1n6g",
+                            user="hylgxgwfjacgtj",
+                            host="ec2-54-225-95-183.compute-1.amazonaws.com",
+                            password="2509ffb8ec855b2a37e2d1b80e0521d942219ad4d55a4abb6c1f5093000f6489")
+
+
+    cur = conn.cursor()
+
+ 
+    cur.execute("""select * from mes_aliments_aliment where nutriscore != 'a';""")
+
+    conn.commit()
+
+    rows = cur.fetchall()
+
+    liste1 = []
+    for i in rows:
+        c = 0
+        for j in i:
+            if c == 5:
+                liste1.append(j)
+            c += 1
+
+
+
+
+            
+    for i in liste:
+        print(liste1[int(i[:-4])])
+
+
+
+        cur.execute("""INSERT INTO niveau2(image)
+                     VALUES((%s));""", (liste1[int(i[:-4])],))
+
+        conn.commit()
+
+
+def essais():
+    conn = psycopg2.connect(database="deed0vc5eh1n6g",
+                            user="hylgxgwfjacgtj",
+                            host="ec2-54-225-95-183.compute-1.amazonaws.com",
+                            password="2509ffb8ec855b2a37e2d1b80e0521d942219ad4d55a4abb6c1f5093000f6489")
+
+
+    cur = conn.cursor()
+
+ 
+    cur.execute("""select * from niveau2;""")
+
+    conn.commit()
+
+    rows = cur.fetchall()
+
+    print(rows)
+
+if __name__ == '__main__':
+
+    #img_to_path()
+    #matching()
+    insertion_database()
+    essais()
+
+    #new_table()
+
+
+
+
+
+
+
