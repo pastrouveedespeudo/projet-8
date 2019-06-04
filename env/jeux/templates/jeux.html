@@ -53,7 +53,7 @@
 </div>
   <section class="bg-primary" id="about">
     <center><p>Selon toi, lequels de ces articles à un nutriscore de A</p></center>
-    <center><p id='imgg' style='color:red; display:none'>Ca peut prendre un peu de temps</p></center>
+
 
     <div id="jeux">
     
@@ -439,7 +439,7 @@
 
     $("#niveau2").on("click", function(e){
          e.preventDefault();
-         document.getElementById('imgg').style.display = 'block';
+  
          document.getElementById('cont1').style.display = 'none';
           $.ajax({
               data:{
@@ -508,14 +508,14 @@
                   document.getElementById('image3niveau2').src=n;
                   document.getElementById('image4niveau2').src=p;
 
-                  document.getElementById('image5niveau2').src=r;
+                  document.getElementById('image5niveau2').srac=r;
                   document.getElementById('image6niveau2').src=t;
                   document.getElementById('image7niveau2').src=v;
                   document.getElementById('image8niveau2').src=x;
 
 
                   document.getElementById('cont2').style.display ='block';
-                  document.getElementById('imgg').style.display = 'none';
+                  
                   
               };
               
