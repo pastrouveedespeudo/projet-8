@@ -47,9 +47,6 @@ def niveau2(message):
 
     one = choice_food_level2()
 
-    print(one)
-
-
     picture = [one[0][0], one[1][0], one[1][1],
              one[1][2], one[1][3], one[1][4],
              one[1][5], one[1][6]]
@@ -124,7 +121,7 @@ def niveau1_continuer(continuer):
 
 def niveau2_continuer(continuer):
     'this is function lvl2 continue'
-    print(continuer)
+
     liste = [[],[],[],[],[],[]]
     c=0
     for i in continuer:
@@ -134,7 +131,7 @@ def niveau2_continuer(continuer):
             liste[c].append(i)
 
     liste = ["".join(i) for i in liste]
-    print(liste,'00000000000000000000000000000000')
+
     liste10 = []
     
     food_choose = aliment.objects.filter(image=liste[1]).all()
@@ -166,7 +163,7 @@ def jeux(request):
   
         continuer = request.POST.get('data')
         continuer = str(continuer)
-        print(continuer,'00000000000000000000000000000000')
+
         current_user = request.user
  
         niveau_continuer = request.POST.get('data1')
