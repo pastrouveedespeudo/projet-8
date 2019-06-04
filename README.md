@@ -1,6 +1,6 @@
 # projet-8
 
-ca devrait tout résoudre mais bon
+ca devrait tout résoudre mais bon c bien plus facile que des pouces ^^ olalalala les heures que j'ai passé a refaire des pouces pixel par pixel pour rien ^^
 
 p11 : Amélioration: jeux
 
