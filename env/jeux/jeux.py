@@ -59,37 +59,27 @@ def choice_food_level2():
 
     cur = conn.cursor()
 
-    cur.execute("""select * from mes_aliments_aliment where nutriscore != 'a';""")
+    cur.execute("""select image from niveau2;""")
 
     conn.commit()
     
     rows = cur.fetchall()
 
-    the_liste = []
+    liste = []
     for i in rows:
-        c = 0
-        for j in i:
-            if c == 5:
-                the_liste.append(j)
-            c += 1
-
-    #path = '/app/static/img_open'
-    path = r'C:\Users\jeanbaptiste\plateforme_nutella\platforme2\venv\plateforme\static\img_open'
-    os.chdir(path)
-    liste = os.listdir()
-
-    liliste = []
-    for i in range(7):
- 
-        a = random.choice(liste)
-        liliste.append(a)
-        liste.remove(a)
-  
+        liste.append(i[0])
 
 
     liste2 = []
-    for i in liliste:
-        liste2.append(the_liste[int(i[:-4])])
+    for i in range(7):
+        a = random.choice(liste)
+        liste2.append(a)
+        liste.remove(a)
+
+
+    
+
+    
 
     
         
