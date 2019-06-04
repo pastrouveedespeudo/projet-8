@@ -77,12 +77,7 @@ def choice_food_level2():
         liste.remove(a)
 
 
-    
 
-    
-
-    
-        
     return liste_food_a, liste2
 
 
