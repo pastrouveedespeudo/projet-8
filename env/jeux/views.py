@@ -138,7 +138,6 @@ def niveau2_continuer(continuer):
     
     for i in food_choose:
         liste10.append(i.nutriscore)
-
     nutriscore_id = liste10[0]
 
 
@@ -148,7 +147,7 @@ def niveau2_continuer(continuer):
         message = "<h1><center>non mauvaise réponse</h1></center>"
     
     a = niveau2(message)
-    return a 
+    return a
 
 
 
