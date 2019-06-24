@@ -20,20 +20,15 @@ def niveau1(message):
 
     image = [str(one[0][2]), str(one[1][0][2]), str(one[1][1][2]), str(one[1][2][2])]
 
-    continuer = True
-    while continuer:
     
-        i = random.choice(image)
-        j = random.choice(image)
-        k = random.choice(image)
-        l = random.choice(image)
-        if i != j and i != k and i != l\
-           and j != k and j != l\
-           and k != l:
-            continuer = False
-            break
-        else:
-            j = l = k = ""
+    i = random.choice(image)
+    image.remove(i)
+    j = random.choice(image)
+    image.remove(j)
+    k = random.choice(image)
+    image.remove(k)
+    l = random.choice(image)
+    image.remove(l)
 
     data = {"image1":i, "image2":j,"image3":k,
             "image4":l,"yo":"coucou",
@@ -67,7 +62,7 @@ def niveau2(message):
     o = random.choice(picture)
     picture.remove(o)
     p = random.choice(picture)
-  
+    picture.remove(p)
 
 
 
@@ -81,7 +76,7 @@ def niveau2(message):
     
 def niveau1_continuer(continuer):
     'this is function lvl1 continue'
-    
+
     liste = [[], []]
     c = 0
     for i in continuer:
@@ -97,22 +92,18 @@ def niveau1_continuer(continuer):
     
     liste10 = []
     
-    food = aliment.objects.filter(image=str(liste2[1])).all()
-    for i in food:
-        liste10.append(i.nutriscore)
+    verif_nutri = verification(liste2[1])
 
-    verif_nutri = liste10[0]
-    
 
     if verif_nutri == "a":
-        liste = ['<center><h1>bien joué</h1></center>',
-                 '<center><h1>participe à top chef</h1></center>',
-                 '<center><h1>formidable</h1></center>']
-        message = random.choice(liste)
-    else:
-        liste = ['<center><h1>nul</h1></center>']
         
-        message = random.choice(liste)
+        liste_reponse = ['<center><h1>bien joué</h1></center>',
+                         '<center><h1>participe à top chef</h1></center>',
+                         '<center><h1>formidable</h1></center>']
+        message = random.choice(liste_reponse)
+        
+    elif verif_nutri != "a":
+        message = '<center><h1>nul</h1></center>'
 
         
     niv1 = niveau1(message)
@@ -134,16 +125,11 @@ def niveau2_continuer(continuer):
 
     liste10 = []
     
-    food_choose = aliment.objects.filter(image=liste[1]).all()
-    
-    for i in food_choose:
-        liste10.append(i.nutriscore)
-    nutriscore_id = liste10[0]
-
+    nutriscore_id = verification(liste[1])
 
     if nutriscore_id == "a":
         message = "<h1><center>oui bonne réponse</h1></center>"
-    else:
+    elif verif_nutri != "a":
         message = "<h1><center>non mauvaise réponse</h1></center>"
     
     a = niveau2(message)
