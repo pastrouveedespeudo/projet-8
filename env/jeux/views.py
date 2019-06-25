@@ -129,7 +129,7 @@ def niveau2_continuer(continuer):
 
     if nutriscore_id == "a":
         message = "<h1><center>oui bonne réponse</h1></center>"
-    elif verif_nutri != "a":
+    elif nutriscore_id != "a":
         message = "<h1><center>non mauvaise réponse</h1></center>"
     
     a = niveau2(message)
