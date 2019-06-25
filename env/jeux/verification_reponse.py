@@ -3,7 +3,7 @@ from .config import *
 
 def verification(aliment):
 
-
+    print(aliment)
     conn = psycopg2.connect(database=DATABASE,
                                 user=USER,
                                 host=HOST,
@@ -12,8 +12,8 @@ def verification(aliment):
 
     
     cur.execute("""select nutriscore
-                    from mes_aliments_aliment
-                    where image = '{}'""".format(aliment))
+                from mes_aliments_aliment
+                where image = '{}'""".format(aliment))
 
     
     conn.commit()
@@ -23,9 +23,9 @@ def verification(aliment):
 
     information = [i for i in rows]
 
-    print('le nutriscore bella est de : ', information)
-    print("verification(), verification_reponse.py") 
-    return information
+    print('le nutriscore est de : ', information)
+    
+    return information[0][0]
 
 
 
