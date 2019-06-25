@@ -490,7 +490,7 @@
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;'>" +
-                                                                "<input type='image' src='' id='image7niveau2' onclick='choice2_7()' style='width:250px; height:300px;'>" +
+                                                                "<input type='image' src='' id='image7niveau2' onclick='choice2_7()' style='width:250px; height:300px'>" +
                                                             "</div>" +
                                                             "<div style='width:20px;'></div>" +
                                                             "<div style='border:1px solid blue;width:250px; height:300px;margin-right:auto;'>" +
@@ -516,7 +516,7 @@
           $.ajax({
               data:{
                   'data':LISTE[LISTE.length - 1],
-                  csrfmiddlewaretoken:'0hxyQjjkTKru9INPBrOg79MpZcvYaIyAN0ysHcDcmJygYcqxAjZB9bBpKTp9CsF9'
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
                   
            
               },
@@ -575,7 +575,7 @@
               data:{
                   'data':String(CHOICE),
                   'data1':'Niveau 1',
-                  csrfmiddlewaretoken:'0hxyQjjkTKru9INPBrOg79MpZcvYaIyAN0ysHcDcmJygYcqxAjZB9bBpKTp9CsF9'
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
                   
            
               },
@@ -634,7 +634,7 @@
           $.ajax({
               data:{
                   'data':LISTE[LISTE.length - 1],
-                  csrfmiddlewaretoken:'0hxyQjjkTKru9INPBrOg79MpZcvYaIyAN0ysHcDcmJygYcqxAjZB9bBpKTp9CsF9'
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
                   
            
               },
@@ -725,7 +725,7 @@
               data:{
                   'data':String(CHOICE),
                   'data1':'Niveau 2',
-                  csrfmiddlewaretoken:'0hxyQjjkTKru9INPBrOg79MpZcvYaIyAN0ysHcDcmJygYcqxAjZB9bBpKTp9CsF9'
+                  csrfmiddlewaretoken:'{{ csrf_token }}'
                   
            
               },
