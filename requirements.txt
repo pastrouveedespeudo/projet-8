@@ -149,7 +149,7 @@ ratelim==0.1.6
 requests==2.20.1
 reverse-geocode==1.3
 reverse-geocoder==1.5.1
-rsa==4.0
+rsa==4.7
 scikit-image==0.15.0
 scipy==1.2.0
 screeninfo==0.3.1
