@@ -86,7 +86,7 @@ more-itertools==6.0.0
 moviepy==0.2.3.5
 mysql-connector==2.1.6
 Myvoicerecognition==1
-nbconvert==5.4.0
+nbconvert==6.5.1
 nbformat==4.4.0
 networkx==2.3
 nltk==3.4
